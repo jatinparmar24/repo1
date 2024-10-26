@@ -1,0 +1,14 @@
+h1{
+    background-color: blue;
+    word-spacing: 50px;
+}
+p{
+    background-color: yellow;
+    margin-top: 20px;
+}
+h1{
+    padding-left: 20px;
+    background-color: red;
+    margin: 50px;
+    background-color: yellow;
+}
