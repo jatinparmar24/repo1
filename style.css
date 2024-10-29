@@ -12,3 +12,14 @@ h1{
     margin: 50px;
     background-color: yellow;
 }
+div{
+    
+    background-color: aquamarine;
+    border: 50px;
+}
+h2{
+    margin: 50px;
+    padding: 40px;
+    background-color: blueviolet;
+    border: solid;
+}
