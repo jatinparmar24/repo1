@@ -7,10 +7,11 @@ p{
     margin-top: 20px;
 }
 h1{
-    padding-left: 20px;
+    padding-left: 80px;
     background-color: red;
-    margin: 50px;
+    margin: 50px; width: 25px;
     background-color: yellow;
+
 }
 div{
     
@@ -22,4 +23,14 @@ h2{
     padding: 40px;
     background-color: blueviolet;
     border: solid;
+}
+ul{
+   background-color: aqua; 
+   border: solid;
+}
+ol{
+    background-color: blue;
+}
+li{
+    background-color: deepskyblue;
 }
