@@ -39,3 +39,6 @@ ol{
     margin-left: 50px;
     text-decoration-style: none;
 }
+li{
+    border: solid;
+}
