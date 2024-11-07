@@ -1,4 +1,7 @@
-
+*{
+    margin: 0px;
+    padding: 0px;
+}
 h1{
     background-color: blue;
     word-spacing: 50px;
@@ -42,3 +45,12 @@ ol{
 li{
     border: solid;
 }
+#new{
+    background-color: paleturquoise;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
