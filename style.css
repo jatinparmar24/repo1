@@ -42,9 +42,7 @@ ol{
     margin-left: 50px;
     text-decoration-style: none;
 }
-li{
-    border: solid;
-}
+
 #new{
     background-color: paleturquoise;
     width: 100%;
@@ -53,4 +51,23 @@ li{
     justify-content: space-between;
     align-items: center;
 }
-
+#new img{
+    width: 80px;
+    height: auto;
+    border-radius: 50%;
+}
+#new nav ul{
+    display: flex;
+    /* justify-content: space-between;
+    align-items: center; */
+    list-style: none;
+}
+#new nav ul li a{
+    text-decoration: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#car1{
+    background-image: url(car.jpg);
+}
