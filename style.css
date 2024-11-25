@@ -39,6 +39,9 @@ ol{
 .navbar li a{
     text-decoration: none;
 }
+.navbar li a:hover{
+    color: red;
+}
 .navbar{
     margin-left: 50px;
     text-decoration-style: none;
