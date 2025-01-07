@@ -72,6 +72,10 @@ ol{
     justify-content: space-between;
     align-items: center;
 }
+
+#new nav ul li a:hover{
+    background-color: red;
+}
 #car1{
     background-image: url(car.jpg);
 }
