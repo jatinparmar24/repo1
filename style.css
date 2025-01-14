@@ -69,12 +69,12 @@ ol{
 #new nav ul li a{
     text-decoration: none;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
 }
 
 #new nav ul li a:hover{
-    background-color: red;
+    background-color: rgb(241, 25, 25);
 }
 #car1{
     background-image: url(car.jpg);
