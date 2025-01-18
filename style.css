@@ -71,6 +71,7 @@ ol{
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    color: red;
 }
 
 #new nav ul li a:hover{
@@ -93,5 +94,5 @@ ol{
 #downbt{
  border-radius: 30px;
  color: black;
- background-color: aqua;
+ background-color: rgb(8, 234, 234);
 }
