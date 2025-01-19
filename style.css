@@ -75,15 +75,15 @@ ol{
 }
 
 #new nav ul li a:hover{
-    background-color: rgb(241, 25, 25);
+    background-color: rgb(207, 8, 8);
 }
 #car1{
     background-image: url(car.jpg);
 }
 
 #round{
-    width: 250px;
-    height: 250px;
+    width: 260px;
+    height: 260px;
     border: 2px solid black;
     border-radius: 30px;
     display: flex;
@@ -93,6 +93,6 @@ ol{
 
 #downbt{
  border-radius: 30px;
- color: black;
+ color: rgb(52, 49, 49);
  background-color: rgb(8, 234, 234);
 }
