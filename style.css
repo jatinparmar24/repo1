@@ -75,6 +75,7 @@ ol{
 }
 
 #new nav ul li a:hover{
+    color: aqua;
     background-color: rgb(207, 8, 8);
 }
 #car1{
