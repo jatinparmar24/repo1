@@ -71,7 +71,7 @@ ol{
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    color: red;
+    color: rgb(236, 73, 73);
 }
 
 #new nav ul li a:hover{
