@@ -4,7 +4,7 @@
 }
 h1{
     background-color: blue;
-    word-spacing: 50px;
+    word-spacing: 40px;
     font-size: 20px;
 }
 p{
@@ -13,15 +13,15 @@ p{
 }
 h1{
     padding-left: 80px;
-    background-color: red;
+    background-color: rgb(231, 10, 10);
     margin: 50px; width: 25px;
-    background-color: yellow;
+    background-color: rgb(207, 207, 20);
 
 }
 div{
     
     background-color: aquamarine;
-    border: 50px;
+    border: 1px solid black;
 }
 h2{
     margin: 50px;
@@ -65,29 +65,29 @@ ol{
 }
 #new nav ul{
     display: flex;
-    /* justify-content: space-between;
-    align-items: center; */
+    justify-content: space-between; 
+    align-items: center;
     list-style: none;
 }
 #new nav ul li a{
     text-decoration: none;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
-    color: rgb(14, 98, 241);
+    color: rgba(28, 87, 188, 0.529);
 }
 
 #new nav ul li a:hover{
-    color: rgba(4, 162, 162, 0.848);
-    background-color: rgba(207, 8, 8, 0.693);
+    color: rgba(8, 248, 248, 0.848);
+    background-color: rgba(165, 28, 28, 0.693);
 }
 #car1{
     background-image: url(car.jpg);
 }
 
 #round{
-    width: 260px;
-    height: 260px;
+    width: 250px;
+    height: 250px;
     border: 4px solid black;
     border-radius: 40px;
     display: flex;
@@ -96,7 +96,7 @@ ol{
 }
 
 #downbt{
- border-radius: 30px;
+ border-radius: 40px;
  color: rgb(52, 49, 49);
- background-color: rgb(8, 234, 234);
+ background-color: rgb(31, 150, 150);
 }
