@@ -3,9 +3,9 @@
     padding: 0px;
 }
 h1{
-    background-color: blue;
+    background-color: rgb(14, 14, 147);
     word-spacing: 40px;
-    font-size: 20px;
+    font-size: 30px;
 }
 p{
     background-color: yellow;
@@ -20,7 +20,7 @@ h1{
 }
 div{
     
-    background-color: aquamarine;
+    background-color: rgb(19, 195, 136);
     border: 1px solid black;
 }
 h2{
