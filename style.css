@@ -5,17 +5,18 @@
 h1{
     background-color: rgb(14, 14, 147);
     word-spacing: 40px;
-    font-size: 30px;
+    letter-spacing: 20px;
+    font-size: 35px;
 }
 p{
     background-color: yellow;
     margin-top: 20px;
 }
 h1{
-    padding-left: 80px;
+    padding-left: 410px;
     background-color: rgb(231, 10, 10);
     margin: 50px; width: 25px;
-    background-color: rgb(207, 207, 20);
+    background-color: rgba(143, 143, 5, 0.718);
 
 }
 div{
@@ -26,8 +27,8 @@ div{
 h2{
     margin: 50px;
     padding: 40px;
-    background-color: blueviolet;
-    border: solid;
+    background-color: rgb(87, 2, 167);
+    border: 1px solid;
 }
 /* ul{
    background-color: aqua; 
