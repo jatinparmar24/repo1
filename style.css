@@ -78,9 +78,12 @@ ol{
     justify-content: space-between;
     align-items: center;
     color: rgba(9, 96, 246, 0.529);
+    overflow: hidden;
 }
 
 #new nav ul li a:hover{
+    transition: 2s;
+    transform: scale(1.1);
     color: rgba(8, 248, 248, 0.848);
     background-color: rgba(165, 28, 28, 0.693);
 }
@@ -92,7 +95,7 @@ ol{
     width: 250px;
     height: 250px;
     border: 4px solid black;
-    border-radius: 40px;
+    border-radius: 45px;
     display: flex;
     justify-content: center;
     align-items: center;
