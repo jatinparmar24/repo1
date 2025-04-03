@@ -77,14 +77,15 @@ ol{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: rgba(9, 96, 246, 0.529);
+    color: rgba(1, 35, 94, 0.529);
     overflow: hidden;
+    transition: 2s;
 }
 
 #new nav ul li a:hover{
     transition: 2s;
     transform: scale(1.1);
-    color: rgba(8, 248, 248, 0.848);
+    color: rgba(67, 210, 210, 0.848);
     background-color: rgba(165, 28, 28, 0.693);
 }
 #car1{
