@@ -105,5 +105,19 @@ ol{
 #downbt{
  border-radius: 40px;
  color: rgb(52, 49, 49);
- background-color: rgb(31, 150, 150);
+ background-color: rgb(31, 214, 214);
 }
+
+.mainc{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.mainc div{
+    text-align: center;
+    font-weight: 800;
+    padding-left: 10px;
+}
+
