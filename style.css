@@ -85,7 +85,7 @@ ol{
 #new nav ul li a:hover{
     transition: 2s;
     transform: scale(1.1);
-    color: rgba(67, 210, 210, 0.848);
+    color: rgba(14, 232, 232, 0.848);
     background-color: rgba(165, 28, 28, 0.693);
 }
 #car1{
@@ -100,12 +100,15 @@ ol{
     display: flex;
     justify-content: center;
     align-items: center;
+    
 }
 
 #downbt{
  border-radius: 40px;
  color: rgb(52, 49, 49);
  background-color: rgb(31, 214, 214);
+ border-radius: 30px;
+ box-shadow: inset 3px 3px 3px grey;
 }
 
 .mainc{
@@ -119,5 +122,6 @@ ol{
     text-align: center;
     font-weight: 800;
     padding-left: 10px;
+    margin-top: 2%;
 }
 
