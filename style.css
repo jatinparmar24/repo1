@@ -136,3 +136,44 @@ ol{
     align-items: center;
 
 }
+
+
+#divhover{
+    width: 100%;
+    height: 100vh;
+    border: 3px double solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.hover1,
+.hover2{
+    width: 200px;
+    height: 200px;
+    border: 1px solid black;
+    text-align: center;
+}
+
+.hover1{
+    background-color: salmon;
+}
+
+.hover1:hover{
+    background-color: darksalmon;
+    transform: rotate3d(45deg);
+    transform: scale(1.5);
+    transition: 2s;
+}
+
+.hover2{
+    background-color: orangered;
+}
+
+.hover2:hover{
+    background-color: red;
+    transform: rotate3d(45deg);
+    transform: scale(1.5);
+    transition: 2s;
+}
