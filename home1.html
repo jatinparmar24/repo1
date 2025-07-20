@@ -1,88 +1,137 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>Fruit</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="car.jpg">
+  <meta charset="UTF-8">
+  <title>Fruit</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="car.jpg">
 </head>
-<body>
-    <a href="car.html">Car</a>&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
-    <a href="home.html">Home</a>&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
-    <a href="index.html">Index</a>&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
-    <a href="index2.html">Index2</a>&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
-    <a href="home page">My Home</a>&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
-    <img src="car.jpg" alt="car" width="150px">
+<body class="fruit-body">
+
+  <!-- Navigation -->
+  <nav class="fruit-nav">
+    <a href="car.html">Car</a>
+    <a href="home.html">Home</a>
+    <a href="index.html">Index</a>
+    <a href="index2.html">Index2</a>
+    <a href="home page">My Home</a>
+  </nav>
+
+  <!-- Image -->
+  <img src="car.jpg" alt="car" width="150px" class="fruit-image">
+
+  <!-- Headings Section -->
+  <section class="fruit-headings">
     <h1>Mango</h1>
     <h2>Grapes</h2>
-    <h3>Pinapple</h3>
+    <h3>Pineapple</h3>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
     <h4>Apple</h4>
     <h4>Orange</h4>
     <h4>Walnut</h4>
     <h3>Cherry</h3>
     <h1>Watermelon</h1>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis autem adipisci, dolore a inventore amet, accusamus molestias voluptatibus quae nihil mollitia voluptates tempora, quidem praesentium. Praesentium ratione aliquid cumque et.</p> 
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis autem adipisci, dolore a inventore amet, accusamus molestias voluptatibus quae nihil mollitia voluptates tempora, quidem praesentium. Praesentium ratione aliquid cumque et.</p>
+  </section>
 
-<form>
-    <button>start</button>
-Gender: <br>
-Enter Name: <input type="text" required placeholder="Enter Your Name"> <br> <br> 
-Enter Pass: <input type="password" required placeholder="Enter Password"> <br> <br>
-Enter Email: <input type="email" required placeholder="Email"> <br> <br>
-Enter Number: <input type="number" required placeholder="Number"> <br>
-Enter Date: <input type="date" required> <br> <br>
-Enter Time: <input type="time"> <br><br>
-Enter Color: <input type="color"><br> <br>
-Enter Submit: <input type="submit"> <br> <br>
-Enter Login: <input type="submit" value="Login"> <br> <br>
-Enter Checkbox: <input type="checkbox" required> I accept all the Terms and Condition ?
-</form>
-<marquee behavior="alternate" direction=""><img src="car.html" alt=""></marquee>
-<marquee behavior="alternate" direction="right">Race against time</marquee> <br>
+  <!-- Form Section -->
+  <section class="fruit-form-section">
+    <form class="fruit-form">
+      <button type="button">Start</button>
 
-<div>
-    <div>
-        <p>Lorem ipsum <br> <i><b><u>Why Not</u></b></i>dolor sit amet.</p>
+      <label>Gender:</label><br>
+
+      <label>Enter Name:</label>
+      <input type="text" required placeholder="Enter Your Name"><br><br>
+
+      <label>Enter Pass:</label>
+      <input type="password" required placeholder="Enter Password"><br><br>
+
+      <label>Enter Email:</label>
+      <input type="email" required placeholder="Email"><br><br>
+
+      <label>Enter Number:</label>
+      <input type="number" required placeholder="Number"><br><br>
+
+      <label>Enter Date:</label>
+      <input type="date" required><br><br>
+
+      <label>Enter Time:</label>
+      <input type="time"><br><br>
+
+      <label>Enter Color:</label>
+      <input type="color"><br><br>
+
+      <input type="submit" value="Submit"><br><br>
+      <input type="submit" value="Login"><br><br>
+
+      <label>
+        <input type="checkbox" required>
+        I accept all the Terms and Conditions
+      </label>
+    </form>
+  </section>
+
+  <!-- Marquee Section -->
+  <section class="fruit-marquees">
+    <marquee behavior="alternate"><img src="car.jpg" alt="car" width="100"></marquee>
+    <marquee behavior="alternate" direction="right">Race against time</marquee>
+  </section>
+
+  <!-- Info Blocks -->
+  <section class="fruit-info">
+    <div class="fruit-info-block">
+      <p>Lorem ipsum <br> <i><b><u>Why Not</u></b></i> dolor sit amet.</p>
     </div>
+
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi!</p>
     <h1>Try Hard To Get Here</h1>
     <p><i>Animation With Keyframes</i></p>
-    <h2>hard to notice</h2><b><u>Listen Think And Do</u></b>
+    <h2>Hard to notice</h2>
+    <b><u>Listen Think And Do</u></b>
     <h2><i>Place to find</i></h2>
-    <p><h1>let us move on to the next chapter</h1></p>
-</div>
-<div>
+    <h1>Let us move on to the next chapter</h1>
+  </section>
+
+  <!-- Additional Form -->
+  <section class="fruit-additional-form">
     <p><i>Lorem ipsum dolor sit</i> <br> amet consectetur.</p>
-     <h1>Trend with new language</h1>
-     <h2>Head and body</h2>
+    <h1>Trend with new language</h1>
+    <h2>Head and body</h2>
 
-     Enter E-Mail:- <input type="email" required  placeholder="Enter Your Email"><br>
-     Enter Number:- <input type="number" required placeholder="Enter  Your Number"><br>
-     Enter Date  :- <input type="date" required>
-     Enter Color :- <input type="color"> <br>
-     Enter File  :- <input type="file">
+    <label>Enter E-Mail:</label>
+    <input type="email" required placeholder="Enter Your Email"><br>
 
-    
-</div>
+    <label>Enter Number:</label>
+    <input type="number" required placeholder="Enter Your Number"><br>
 
-<div><p>Lorem ipsum dolor <br> sit amet.</p></div>
-<div>
-    <h1>
+    <label>Enter Date:</label>
+    <input type="date" required><br>
+
+    <label>Enter Color:</label>
+    <input type="color"><br>
+
+    <label>Enter File:</label>
+    <input type="file">
+  </section>
+
+  <!-- Final Sections -->
+  <section class="fruit-final">
+    <p>Lorem ipsum dolor <br> sit amet.</p>
+    <div>
+      <h1>
         <p><s>Lorem ipsum dolor sit amet.</s></p>
         <p>Lorem ipsum dolor sit amet.</p>
-        <marquee behavior="alternate" direction="">Behaive</marquee>
-    </h1>
-</div>
+        <marquee behavior="alternate">Behaive</marquee>
+      </h1>
+    </div>
+  </section>
 
-<div class="mainc">
+  <!-- Grid Content -->
+  <section class="mainc">
     <div><p>Lorem ipsum dolor sit amet consectetur adipisicing.</p></div>
     <div><p>Lorem ipsum dolor sit amet consectetur adipisicing.</p></div>
-    <div><p>Lorem ipsum dolor sit amet consectetur adipisicing.</p></div>
-    <div><p>Lorem ipsum dolor sit amet consectetur adipisicing.</p></div>
-    <div><p>Lorem ipsum dolor sit amet consectetur adipisicing.</p></div>
-    <div><p>Lorem ipsum dolor sit amet consectetur adipisicing.</p></div>
-    <div><p>Lorem ipsum dolor sit amet consectetur adipisicing.</p></div>
-</div>
+  </section>
 
-
-</body> 
+</body>
 </html>
