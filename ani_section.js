@@ -51,3 +51,42 @@ document.querySelectorAll('.quad-section').forEach(section => {
 });
 
 // section 1
+
+
+// section 2
+function toggleMode() {
+  const container = document.getElementById("scene-container");
+  const timeMsg = document.getElementById("scene-time-message");
+  const birds = document.getElementById("scene-birds");
+
+  // Toggle day/night class
+  container.classList.toggle("scene-night");
+
+  // Update time message
+  const isNight = container.classList.contains("scene-night");
+  timeMsg.textContent = isNight ? "Good Night" : "Good Morning";
+
+  // Trigger bird flutter
+  birds.classList.add("scene-birds-flutter");
+  setTimeout(() => {
+    birds.classList.remove("scene-birds-flutter");
+  }, 1000);
+}
+
+// Generate stars
+function generateStars() {
+  const starContainer = document.getElementById("scene-stars");
+  for (let i = 0; i < 50; i++) {
+    const star = document.createElement("div");
+    star.classList.add("scene-star");
+    star.style.top = Math.random() * 100 + "%";
+    star.style.left = Math.random() * 100 + "%";
+    star.style.animationDelay = Math.random() * 2 + "s";
+    starContainer.appendChild(star);
+  }
+}
+
+generateStars();
+
+
+// section 2

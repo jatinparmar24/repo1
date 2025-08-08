@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 /* section 1 */
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap');
 
@@ -83,3 +87,267 @@
 }
 
 /* section 1 */
+
+
+/* section 2 */
+.scene-container {
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(to top, #87ceeb, #ffffff);
+  transition: background 1s ease;
+}
+
+.scene-time-message {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(255, 255, 255, 0.6);
+  padding: 10px 15px;
+  border-radius: 10px;
+  z-index: 10;
+  font-weight: bold;
+}
+
+.scene-sky {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.scene-sun {
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  width: 80px;
+  height: 80px;
+  background: radial-gradient(circle, #FFD700, #FFA500);
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 0 30px #fbd33b;
+  transition: all 1s ease;
+  z-index: 2;
+}
+.scene-night .scene-sun {
+  background: radial-gradient(circle, #e0e0e0, #a9a9a9);
+  box-shadow: 0 0 20px #999;
+}
+
+.scene-birds {
+  position: absolute;
+  top: 20%;
+  left: -10%;
+  display: flex;
+  gap: 50px;
+  animation: flyAcross 15s linear infinite;
+  z-index: 5;
+}
+.scene-bird {
+  width: 20px;
+  height: 20px;
+  background: black;
+  clip-path: polygon(0 50%, 50% 0, 100% 50%, 50% 100%);
+  transform: rotate(45deg);
+}
+@keyframes flyAcross {
+  0% {
+    left: -10%;
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    left: 110%;
+    transform: translateY(0);
+  }
+}
+
+.scene-cloud {
+  position: absolute;
+  width: 120px;
+  height: 60px;
+  background: #ffffff;
+  border-radius: 50%;
+  opacity: 0.6;
+  z-index: 4;
+  animation: floatCloud 30s linear infinite;
+}
+.cloud1 {
+  top: 80px;
+  left: -200px;
+  animation-delay: 0s;
+}
+.cloud2 {
+  top: 140px;
+  left: -300px;
+  animation-delay: 5s;
+}
+@keyframes floatCloud {
+  0% {
+    left: -200px;
+  }
+  100% {
+    left: 110%;
+  }
+}
+
+.scene-stars {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+.scene-star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: white;
+  border-radius: 50%;
+  animation: blink 2s infinite alternate;
+}
+@keyframes blink {
+  0% {
+    opacity: 0.2;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+.scene-mountains {
+  position: absolute;
+  bottom: 120px;
+  width: 100%;
+  z-index: 3;
+}
+
+.scene-river {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 120px;
+  background: linear-gradient(to bottom, #4fc3f7, #0288d1);
+  animation: flow 3s ease-in-out infinite alternate;
+  z-index: 2;
+}
+@keyframes flow {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(10px);
+  }
+}
+
+.scene-house {
+  position: absolute;
+  bottom: 130px;
+  left: 80px;
+  width: 80px;
+  z-index: 4;
+}
+.scene-roof {
+  width: 0;
+  height: 0;
+  border-left: 40px solid transparent;
+  border-right: 40px solid transparent;
+  border-bottom: 40px solid #8B0000;
+}
+.scene-walls {
+  width: 80px;
+  height: 60px;
+  background: #ffcc99;
+}
+.scene-door {
+  width: 20px;
+  height: 30px;
+  background: #654321;
+  margin: 0 auto;
+  margin-top: 10px;
+}
+
+.scene-campfire {
+  position: absolute;
+  bottom: 130px;
+  left: 170px;
+  width: 20px;
+  height: 40px;
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+.scene-fire {
+  width: 10px;
+  height: 10px;
+  background: orange;
+  border-radius: 50%;
+  animation: flicker 1s infinite alternate;
+}
+.flame2 {
+  animation-delay: 0.2s;
+}
+.flame3 {
+  animation-delay: 0.4s;
+}
+@keyframes flicker {
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1.3);
+    opacity: 1;
+  }
+}
+
+.scene-tree {
+  position: absolute;
+  bottom: 130px;
+  width: 20px;
+  height: 60px;
+  background: #228B22;
+  border-radius: 10px;
+  animation: sway 3s ease-in-out infinite alternate;
+}
+.tree-left {
+  left: 250px;
+}
+.tree-right {
+  right: 250px;
+}
+@keyframes sway {
+  0% {
+    transform: rotate(-2deg);
+  }
+  100% {
+    transform: rotate(2deg);
+  }
+}
+
+.scene-night {
+  background: linear-gradient(to top, #0f2027, #203a43, #2c5364);
+}
+.scene-night .scene-river {
+  background: linear-gradient(to bottom, #1565c0, #0d47a1);
+}
+.scene-night .scene-bird {
+  background: #ccc;
+}
+.scene-night .scene-roof {
+  border-bottom-color: #4b0000;
+}
+.scene-night .scene-cloud {
+  display: none;
+}
+.scene-night .scene-stars {
+  display: block;
+}
+
+/* section 2 */
