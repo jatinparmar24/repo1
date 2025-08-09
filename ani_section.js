@@ -90,3 +90,32 @@ generateStars();
 
 
 // section 2
+
+// section 3
+document.addEventListener("DOMContentLoaded", () => {
+  const rocket = document.getElementById("spaceRocket");
+  const capsule = document.getElementById("spaceCapsule");
+  const intro = document.getElementById("spaceIntro");
+  const hatch = capsule.querySelector(".space-hatch");
+
+  setTimeout(() => {
+    rocket.classList.add("center");
+
+    setTimeout(() => {
+      capsule.classList.add("drop");
+
+      setTimeout(() => {
+        hatch.classList.add("open");
+
+        setTimeout(() => {
+          intro.classList.add("show");
+        }, 800);
+
+      }, 2000);
+
+    }, 3000);
+
+  }, 5000);
+});
+
+// section 3
