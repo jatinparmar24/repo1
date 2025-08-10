@@ -119,3 +119,48 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // section 3
+
+// section 4
+let curtainColors = ['#d86f5b', '#5b8cd8', '#6fd89d'];
+let curtainIndex = 0;
+
+function changeCurtainColor() {
+  curtainIndex = (curtainIndex + 1) % curtainColors.length;
+  document.querySelectorAll('.interior-curtain').forEach(c => {
+    c.style.background = curtainColors[curtainIndex];
+  });
+}
+
+function toggleCupboard() {
+  document.querySelector('.interior-door').classList.toggle('open');
+  if (document.querySelector('.interior-door').classList.contains('open')) {
+    document.querySelector('.interior-door').style.transform = 'translateX(100%)';
+  } else {
+    document.querySelector('.interior-door').style.transform = 'translateX(0)';
+  }
+}
+
+function toggleDayNight() {
+  document.querySelector('.interior-hero').classList.toggle('night');
+}
+
+document.addEventListener("mousemove", (e) => {
+  const room = document.querySelector(".interior-room");
+  const moveX = (e.clientX / window.innerWidth - 0.5) * 10;
+  const moveY = (e.clientY / window.innerHeight - 0.5) * 10;
+  room.style.transform = `translate(${moveX}px, ${moveY}px)`;
+});
+
+function updateClock() {
+  const now = new Date();
+  const sec = now.getSeconds() * 6;
+  const min = now.getMinutes() * 6 + sec / 60;
+  const hour = (now.getHours() % 12) * 30 + min / 12;
+  document.querySelector('.interior-second').style.transform = `rotate(${sec}deg)`;
+  document.querySelector('.interior-minute').style.transform = `rotate(${min}deg)`;
+  document.querySelector('.interior-hour').style.transform = `rotate(${hour}deg)`;
+}
+setInterval(updateClock, 1000);
+updateClock();
+
+// section 4

@@ -482,3 +482,243 @@ body {
 }
 
 /* section 3 */
+
+/* section 4 */
+.interior-hero {
+  position: relative;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f7ede2, #f1d6b8);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  overflow: hidden;
+  padding: 2%;
+  flex-wrap: wrap;
+  transition: background 0.6s ease;
+}
+
+.interior-toggle {
+  position: absolute;
+  top: 2%;
+  right: 2%;
+  width: clamp(35px, 5vw, 45px);
+  height: clamp(35px, 5vw, 45px);
+  background: #ffdd57;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.interior-room {
+  position: relative;
+  width: 48%;
+  max-width: 500px;
+  aspect-ratio: 1 / 1;
+  transition: transform 0.2s ease;
+}
+
+.interior-sunlight {
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  width: 50%;
+  height: 50%;
+  background: radial-gradient(rgba(255,255,200,0.5), transparent);
+  transform: rotate(45deg);
+  animation: lightMove 5s infinite alternate;
+}
+@keyframes lightMove {
+  0% { transform: rotate(45deg) translateY(0); }
+  100% { transform: rotate(45deg) translateY(5%); }
+}
+
+.interior-window {
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  width: 35%;
+  height: 38%;
+  background: #cce7f0;
+  border: 0.8vw solid #8b5e3c;
+}
+.interior-curtain {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  background: #d86f5b;
+  animation: sway 3s ease-in-out infinite;
+}
+.interior-curtain-left { left: 0; }
+.interior-curtain-right { right: 0; }
+@keyframes sway {
+  0%,100% { transform: rotate(0deg); }
+  50% { transform: rotate(1deg); }
+}
+
+.interior-clock {
+  position: absolute;
+  top: 5%;
+  right: 15%;
+  width: 12%;
+  aspect-ratio: 1/1;
+  background: #fff;
+  border: 0.4vw solid #333;
+  border-radius: 50%;
+}
+.interior-clock div {
+  position: absolute;
+  background: #333;
+  transform-origin: bottom;
+}
+.interior-hour {
+  width: 0.5vw;
+  height: 35%;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.interior-minute {
+  width: 0.4vw;
+  height: 42%;
+  top: 12%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.interior-second {
+  width: 0.3vw;
+  height: 45%;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: red;
+}
+
+.interior-frame {
+  position: absolute;
+  width: 15%;
+  height: 12%;
+  background: #eee;
+  border: 0.5vw solid #5a4b4b;
+  transition: transform 0.3s ease;
+}
+.interior-frame:hover { transform: scale(1.05); }
+.interior-frame1 { top: 50%; left: 5%; }
+.interior-frame2 { top: 65%; left: 5%; }
+
+.interior-cupboard {
+  position: absolute;
+  right: 5%;
+  bottom: 15%;
+  width: 25%;
+  height: 35%;
+  background: #8b5e3c;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+  overflow: hidden;
+}
+.interior-door {
+  width: 100%;
+  height: 100%;
+  background: #a97458;
+  transition: transform 0.4s ease;
+}
+
+.interior-plant {
+  position: absolute;
+  bottom: 10%;
+  right: 30%;
+  width: 10%;
+  height: 25%;
+  background: green;
+  border-radius: 50% 50% 5px 5px;
+}
+
+.interior-table {
+  position: absolute;
+  bottom: 10%;
+  left: 20%;
+  width: 45%;
+  height: 12%;
+  background: #a97458;
+}
+.interior-vase {
+  position: absolute;
+  top: -60%;
+  left: 40%;
+  width: 18%;
+  height: 100%;
+  background: #f2d0a9;
+  border-radius: 50% 50% 5px 5px;
+}
+
+.interior-rug {
+  position: absolute;
+  bottom: 0;
+  left: 10%;
+  width: 60%;
+  height: 7%;
+  background: repeating-linear-gradient(45deg, #b8a07e, #b8a07e 10%, #a68b63 10%, #a68b63 20%);
+  border-radius: 20px;
+}
+
+.interior-text {
+  width: 45%;
+  min-width: 280px;
+  text-align: left;
+}
+.interior-text h1 {
+  font-size: clamp(1.8rem, 3vw, 2.8rem);
+  margin-bottom: 15px;
+}
+.interior-text p {
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  margin-bottom: 20px;
+}
+.interior-btn {
+  padding: 0.8em 1.5em;
+  background: #d86f5b;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: clamp(0.9rem, 1.5vw, 1rem);
+  border-radius: 5px;
+}
+.interior-btn:hover {
+  background: #b85a49;
+}
+
+.interior-hero.night {
+  background: linear-gradient(135deg, #2b2b3a, #1a1a2e);
+}
+.interior-hero.night .interior-sunlight { display: none; }
+.interior-hero.night .interior-toggle { background: #4a90e2; }
+
+@media (max-width: 900px) {
+  .interior-hero {
+    flex-direction: column;
+    justify-content: center;
+  }
+  .interior-room {
+    width: 90%;
+    max-width: none;
+    order: 1;
+  }
+  .interior-text {
+    width: 90%;
+    text-align: center;
+    order: 2;
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 500px) {
+  .interior-toggle {
+    top: 10px;
+    right: 10px;
+  }
+  .interior-room {
+    aspect-ratio: auto;
+    height: 60vh;
+  }
+}
+
+/* section 4 */
