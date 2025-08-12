@@ -1,0 +1,178 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+/* section 1 hotel */
+.hotel-hero {
+  height: 100vh;
+  background: linear-gradient(120deg, #0a1f44, #1a3c68, #0a1f44);
+  background-size: 400% 400%;
+  animation: hotel-gradient 12s ease infinite;
+  color: white;
+  position: relative;
+  font-family: 'Poppins', sans-serif;
+  overflow: hidden;
+}
+
+.hotel-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+}
+.hotel-logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: gold;
+}
+.hotel-nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+.hotel-nav-links li a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  position: relative;
+}
+.hotel-nav-links li a::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  height: 2px;
+  width: 0;
+  background: gold;
+  transition: width 0.3s;
+}
+.hotel-nav-links li a:hover::after {
+  width: 100%;
+}
+.hotel-hamburger {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: gold;
+}
+
+.hotel-main {
+  text-align: center;
+  margin-top: 80px;
+  animation: hotel-fadeIn 1s ease forwards;
+}
+.hotel-title {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+.hotel-subtitle {
+  font-size: 1.2rem;
+  opacity: 0.85;
+}
+
+.hotel-box {
+  position: absolute;
+  bottom: 30px;
+  padding: 15px 25px;
+  background: rgba(255, 215, 0, 0.9);
+  color: #0a1f44;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.hotel-box:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.8);
+}
+.hotel-box-left {
+  left: 30px;
+  animation: hotel-slideInLeft 1.2s ease;
+}
+.hotel-box-right {
+  right: 30px;
+  animation: hotel-slideInRight 1.2s ease;
+}
+
+.hotel-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  background: white;
+  color: #0a1f44;
+  padding: 25px;
+  border-radius: 10px;
+  width: 320px;
+  max-width: 90%;
+  text-align: left;
+  transition: transform 0.3s ease;
+  z-index: 999;
+}
+.hotel-popup ul {
+  margin-top: 10px;
+  padding-left: 20px;
+}
+.hotel-popup li {
+  margin: 5px 0;
+}
+.hotel-popup.active {
+  transform: translate(-50%, -50%) scale(1);
+}
+.hotel-close {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+@keyframes hotel-gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+@keyframes hotel-fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes hotel-slideInLeft {
+  from { opacity: 0; transform: translateX(-50px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+@keyframes hotel-slideInRight {
+  from { opacity: 0; transform: translateX(50px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hotel-nav-links {
+    display: none;
+    flex-direction: column;
+    background: rgba(0,0,0,0.9);
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    width: 200px;
+  }
+  .hotel-nav-links.active {
+    display: flex;
+  }
+  .hotel-hamburger {
+    display: block;
+  }
+  .hotel-box {
+    bottom: 20px;
+    padding: 12px 20px;
+    font-size: 0.9rem;
+  }
+}
+
+/* section 1 hotel */

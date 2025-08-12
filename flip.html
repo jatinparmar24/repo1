@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="flip.css">
+</head>
+<body>
+
+<!-- section 1 hotel -->
+<section class="hotel-hero">
+  <nav class="hotel-navbar">
+    <div class="hotel-logo">HotelEase</div>
+    <ul class="hotel-nav-links">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Rooms</a></li>
+      <li><a href="#">Dining</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+    <div class="hotel-hamburger">&#9776;</div>
+  </nav>
+
+  <div class="hotel-main">
+    <h1 class="hotel-title">Luxury Stays, Unforgettable Memories</h1>
+    <p class="hotel-subtitle">Discover world-class comfort and breathtaking views.</p>
+  </div>
+
+  <div class="hotel-box hotel-box-left" onclick="showPopup('left')">
+    Special Offers
+  </div>
+  <div class="hotel-box hotel-box-right" onclick="showPopup('right')">
+    Our Rooms
+  </div>
+
+  <div class="hotel-popup" id="popup-left">
+    <span class="hotel-close" onclick="closePopup('left')">&times;</span>
+    <h2>Exclusive Offers</h2>
+    <ul>
+      <li>Up to 30% off on bookings</li>
+      <li>Complimentary breakfast</li>
+      <li>Late checkout available</li>
+    </ul>
+  </div>
+
+  <div class="hotel-popup" id="popup-right">
+    <span class="hotel-close" onclick="closePopup('right')">&times;</span>
+    <h2>Our Rooms</h2>
+    <ul>
+      <li>Ocean View Suite</li>
+      <li>Luxury Penthouse</li>
+      <li>Deluxe King Room</li>
+    </ul>
+  </div>
+</section>
+
+
+<!-- section 1 hotel -->
+    
+
+<script src="flip.js"></script>
+</body>
+</html>
