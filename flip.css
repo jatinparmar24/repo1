@@ -149,6 +149,98 @@
   to { opacity: 1; transform: translateX(0); }
 }
 
+/* section 1 hotel */
+
+/* section 2 */
+.under-hero {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  background: linear-gradient(to bottom, #0f4d6d, #021a2a);
+}
+
+.under-rays {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: repeating-linear-gradient(120deg, rgba(255,255,255,0.05) 0px, rgba(255,255,255,0.05) 2px, transparent 2px, transparent 100px);
+  animation: raysMove 10s linear infinite;
+}
+@keyframes raysMove {
+  from { background-position: 0 0; }
+  to { background-position: -100px 100px; }
+}
+
+.under-bubbles {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.under-city {
+  position: absolute;
+  bottom: 60px;
+  width: 100%;
+}
+
+.under-coral {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.under-fish {
+  position: absolute;
+  width: 80px;
+  animation: fishSwim 12s linear infinite;
+}
+@keyframes fishSwim {
+  0% { transform: translateX(-100px) translateY(50px) scaleX(1); }
+  50% { transform: translateX(100vw) translateY(100px) scaleX(1); }
+  51% { transform: translateX(100vw) translateY(100px) scaleX(-1); }
+  100% { transform: translateX(-100px) translateY(50px) scaleX(-1); }
+}
+
+/* Heading */
+.under-heading {
+  position: relative;
+  top: 30%;
+  text-align: center;
+  z-index: 2;
+}
+.under-heading h1 {
+  font-size: 3rem;
+  animation: waveText 3s ease-in-out infinite;
+}
+@keyframes waveText {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+.under-heading p {
+  font-size: 1.2rem;
+  opacity: 0.8;
+}
+.bubble {
+  position: absolute;
+  bottom: -50px;
+  background: rgba(255,255,255,0.4);
+  border-radius: 50%;
+  animation: rise linear infinite;
+}
+
+@keyframes rise {
+  to {
+    transform: translateY(-110vh);
+  }
+}
+
+
+/* section 2 */
+
 /* Responsive */
 @media (max-width: 768px) {
   .hotel-nav-links {
@@ -175,4 +267,3 @@
   }
 }
 
-/* section 1 hotel */
