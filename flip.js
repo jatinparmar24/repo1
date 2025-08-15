@@ -106,3 +106,75 @@ switchBtn.addEventListener("click", () => {
 applySeason(index);
 
 // section 3
+
+
+// section 4
+document.addEventListener("DOMContentLoaded", () => {
+  const hamburger = document.querySelector(".space-hamburger");
+  const navLinks = document.querySelector(".space-nav-links");
+
+  hamburger.addEventListener("click", () => {
+    navLinks.classList.toggle("space-nav-active");
+    hamburger.classList.toggle("space-toggle");
+  });
+
+  const planetInfo = {
+    Mercury: {
+      text: "Mercury is the smallest planet and closest to the Sun.",
+      color: "linear-gradient(180deg, #b0b0b0, #5a5a5a)",
+      bg: "radial-gradient(circle, #1a1a1a, #000)"
+    },
+    Venus: {
+      text: "Venus has a thick atmosphere and is the hottest planet.",
+      color: "linear-gradient(180deg, #f5deb3, #d2b48c)",
+      bg: "radial-gradient(circle, #33220e, #000)"
+    },
+    Earth: {
+      text: "Our home planet, the only one known to support life.",
+      color: "linear-gradient(180deg, #2e8b57, #1e90ff)",
+      bg: "radial-gradient(circle, #0b0f2f, #000)"
+    },
+    Mars: {
+      text: "The Red Planet, with the largest volcano in the solar system.",
+      color: "linear-gradient(180deg, #ff4500, #8b0000)",
+      bg: "radial-gradient(circle, #1a0d0d, #000)"
+    },
+    Jupiter: {
+      text: "The largest planet, famous for its Great Red Spot.",
+      color: "linear-gradient(180deg, #d2b48c, #8b4513)",
+      bg: "radial-gradient(circle, #2b1b0e, #000)"
+    },
+    Saturn: {
+      text: "Known for its beautiful rings made of ice and rock.",
+      color: "linear-gradient(180deg, #f5deb3, #deb887)",
+      bg: "radial-gradient(circle, #2b1b0e, #000)"
+    },
+    Uranus: {
+      text: "An ice giant with a unique sideways rotation.",
+      color: "linear-gradient(180deg, #00ffff, #00008b)",
+      bg: "radial-gradient(circle, #0b1b3f, #000)"
+    },
+    Neptune: {
+      text: "The farthest planet, deep blue and windy.",
+      color: "linear-gradient(180deg, #4169e1, #00008b)",
+      bg: "radial-gradient(circle, #0b1b3f, #000)"
+    }
+  };
+
+  const planets = document.querySelectorAll(".space-planet");
+  const infoTitle = document.querySelector(".space-info-title");
+  const infoText = document.querySelector(".space-info-text");
+  const spaceSection = document.querySelector(".space-hero");
+
+  planets.forEach(planet => {
+    planet.addEventListener("click", () => {
+      const name = planet.dataset.name;
+      infoTitle.textContent = name;
+      infoText.textContent = planetInfo[name].text;
+      planet.style.background = planetInfo[name].color;
+      spaceSection.style.background = planetInfo[name].bg;
+    });
+  });
+});
+
+// section 4
