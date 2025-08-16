@@ -178,3 +178,24 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // section 4
+
+// section 5
+const themess = ["magenta", "cyan", "lime"];
+let current = 0;
+document.querySelector(".cyber-cta").addEventListener("click", () => {
+  current = (current + 1) % themess.length;
+  document.querySelector(".cyber-theme").setAttribute("data-theme", themess[current]);
+});
+
+const hamburgers = document.querySelector(".cyber-hamburger");
+const navLinkes = document.querySelector(".cyber-nav-links");
+hamburgers.addEventListener("click", () => {
+  navLinkes.classList.toggle("cyber-open");
+});
+
+const logo = document.querySelector(".cyber-logo");
+setInterval(() => {
+  logo.style.opacity = Math.random() > 0.1 ? "1" : "0.6";
+}, 500);
+
+// section 5
