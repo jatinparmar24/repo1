@@ -199,3 +199,28 @@ setInterval(() => {
 }, 500);
 
 // section 5
+
+// section 6
+const auroraSky = document.querySelector(".aurora-sky");
+
+function createShootingStar() {
+  const star = document.createElement("div");
+  star.classList.add("aurora-shooting-star");
+
+  star.style.top = Math.random() * 50 + "%";
+  star.style.left = Math.random() * 80 + "%";
+
+  auroraSky.appendChild(star);
+
+  setTimeout(() => {
+    star.remove();
+  }, 2000);
+}
+
+setInterval(() => {
+  createShootingStar();
+}, Math.random() * 3000 + 5000);
+
+auroraSky.addEventListener("click", createShootingStar);
+
+// section 6
