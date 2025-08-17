@@ -1233,6 +1233,34 @@
     padding: 12px 20px;
     font-size: 0.9rem;
   }
+
+  /* section 6 */
+    .aurora-title {
+    font-size: 1.8rem;
+  }
+  .aurora-subtitle {
+    font-size: 0.95rem;
+  }
+  .aurora-moon {
+    width: 60px;
+    height: 60px;
+    top: 15%;
+    left: 60%;
+  }
+  .aurora-landscape {
+    height: 30%;
+  }
+  .aurora-deer {
+    left: 10%;
+    width: 45px;
+    height: 45px;
+  }
+  .aurora-campfire {
+    left: 25%;
+    width: 30px;
+    height: 30px;
+  }
+  /* section 6 */
 }
 
 /* section 4 */
@@ -1268,3 +1296,55 @@
 }
 
 /* section 4 */
+
+/* Tablet adjustments */
+@media (max-width: 1024px) {
+  .aurora-title {
+    font-size: 2rem;
+  }
+  .aurora-subtitle {
+    font-size: 1rem;
+  }
+  .aurora-moon {
+    width: 80px;
+    height: 80px;
+    left: 65%;
+  }
+}
+
+
+
+/* Mobile phones */
+@media (max-width: 480px) {
+  /* section 6 */
+  .aurora-title {
+    font-size: 1.4rem;
+    margin-bottom: 5px;
+  }
+  .aurora-subtitle {
+    font-size: 0.85rem;
+    margin-bottom: 15px;
+  }
+  .aurora-btn {
+    font-size: 0.85rem;
+    padding: 8px 18px;
+  }
+  .aurora-moon {
+    width: 45px;
+    height: 45px;
+    top: 12%;
+    left: 55%;
+  }
+  .aurora-deer {
+    width: 35px;
+    height: 35px;
+  }
+  .aurora-campfire {
+    width: 25px;
+    height: 25px;
+  }
+  .aurora-landscape {
+    height: 25%;
+  }
+  /* section 6 */
+}
