@@ -1,0 +1,112 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+/* section 1 */
+.real-hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  perspective: 1000px;
+}
+
+.real-content {
+  z-index: 5;
+  max-width: 600px;
+}
+
+.real-content h1 {
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 15px rgba(255,255,255,0.3);
+}
+
+.real-content p {
+  font-size: 1.3rem;
+}
+
+.corner {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 3;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.corner[data-type="sun"] {
+  background-image: url('https://cdn-icons-png.flaticon.com/512/869/869869.png');
+  top: 20px; left: 20px;
+  animation: rotate 20s linear infinite;
+}
+.corner[data-type="cloud"] {
+  background-image: url('https://cdn-icons-png.flaticon.com/512/1163/1163624.png');
+  top: 20px; right: 20px;
+  animation: float 6s ease-in-out infinite;
+}
+.corner[data-type="leaf"] {
+  background-image: url('https://cdn-icons-png.flaticon.com/512/765/765451.png');
+  bottom: 20px; left: 20px;
+  animation: sway 5s ease-in-out infinite;
+}
+.corner[data-type="droplet"] {
+  background-image: url('https://cdn-icons-png.flaticon.com/512/427/427735.png');
+  bottom: 20px; right: 20px;
+  animation: pulse 3s infinite;
+}
+
+@keyframes rotate { from { transform: rotate(0); } to { transform: rotate(360deg); } }
+@keyframes float { 0%,100%{ transform: translateY(0);} 50%{ transform: translateY(15px);} }
+@keyframes sway { 0%,100%{ transform: rotate(-5deg);} 50%{ transform: rotate(5deg);} }
+@keyframes pulse { 0%,100%{ transform: scale(1);} 50%{ transform: scale(1.2);} }
+
+.corner:hover {
+  box-shadow: 0 0 20px 8px rgba(255,255,255,0.5);
+  animation: none;
+}
+.corner[data-type="sun"]:hover { animation: spin 2s infinite linear; }
+.corner[data-type="cloud"]:hover { animation: wobble 1.5s infinite; }
+.corner[data-type="leaf"]:hover { animation: jelly 1.2s infinite; }
+.corner[data-type="droplet"]:hover { animation: shake 0.8s infinite; }
+
+@keyframes spin { from { transform: rotate(0);} to { transform: rotate(360deg);} }
+@keyframes wobble {0%,100%{transform: rotate(0);}25%{transform: rotate(10deg);}75%{transform: rotate(-10deg);} }
+@keyframes jelly {0%,100%{transform: scale(1,1);}25%{transform: scale(0.9,1.1);}50%{transform: scale(1.1,0.9);}75%{transform: scale(0.95,1.05);} }
+@keyframes shake {0%,100%{transform: translateX(0);}25%{transform: translateX(-10px);}75%{transform: translateX(10px);} }
+
+.particles {
+  position: absolute;
+  top:0; left:0;
+  width:100%; height:100%;
+  z-index:1;
+  overflow:hidden;
+  pointer-events:none;
+}
+.particle {
+  position:absolute;
+  width:6px; height:6px;
+  border-radius:50%;
+  background:white;
+  opacity:0.7;
+  animation: moveUp linear infinite;
+}
+@keyframes moveUp {
+  from { transform: translateY(100vh) scale(0.5); opacity:0.8;}
+  to { transform: translateY(-10vh) scale(1.2); opacity:0;}
+}
+
+/* section 1 */
