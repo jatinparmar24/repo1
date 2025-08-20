@@ -110,3 +110,120 @@
 }
 
 /* section 1 */
+
+/* section 2 loader */
+/* ====== Scoped variables & layout ====== */
+.ldr-section {
+  --bg: #0e1116;
+  --card: #171b22;
+  --muted: #99a3b2;
+  --ring1: #6ee7f9;
+  --ring2: #7c3aed;
+  --dot: #22d3ee;
+  --bar: #60a5fa;
+
+  background: radial-gradient(1200px 600px at 20% -10%, #1b2230 0%, transparent 60%),
+              radial-gradient(1000px 500px at 120% 110%, #111827 0%, transparent 60%),
+              var(--bg);
+  padding: clamp(20px, 5vw, 48px);
+  display: grid;
+  place-items: center;
+  min-height: 70vh;
+  color: white;
+  font-family: ui-sans-serif, system-ui, Arial, sans-serif;
+}
+
+.ldr-wrap {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(240px, 1fr));
+  gap: clamp(16px, 2vw, 28px);
+  width: min(1100px, 100%);
+}
+
+.ldr-card {
+  background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 18px;
+  padding: 22px 22px 28px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25), inset 0 1px 0 rgba(255,255,255,0.05);
+  display: grid;
+  place-items: center;
+  gap: 18px;
+}
+
+.ldr-label {
+  font-size: 0.95rem;
+  letter-spacing: 0.3px;
+  color: var(--muted);
+}
+
+/* ====== Loader 1: Spinning Ring (conic gradient) ====== */
+.ldr-ring {
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  background:
+    conic-gradient(from 0turn, var(--ring1), var(--ring2), var(--ring1));
+  -webkit-mask: radial-gradient(farthest-side, transparent calc(50% - 6px), #000 calc(50% - 6px));
+          mask: radial-gradient(farthest-side, transparent calc(50% - 6px), #000 calc(50% - 6px));
+  animation: ldr-spin 1s linear infinite;
+  filter: drop-shadow(0 0 18px rgba(124, 58, 237, 0.35));
+}
+@keyframes ldr-spin { to { transform: rotate(1turn); } }
+
+/* ====== Loader 2: Bouncing Dots ====== */
+.ldr-dots {
+  display: inline-flex;
+  align-items: flex-end;
+  gap: 10px;
+  height: 44px;
+}
+.ldr-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 40% 40%, #fff 0%, var(--dot) 45%, #0ea5b6 100%);
+  animation: ldr-bounce 900ms ease-in-out infinite;
+  box-shadow: 0 6px 16px rgba(34, 211, 238, 0.35);
+}
+.ldr-dot:nth-child(2) { animation-delay: 0.12s; }
+.ldr-dot:nth-child(3) { animation-delay: 0.24s; }
+@keyframes ldr-bounce {
+  0%, 100% { transform: translateY(0) scale(1); opacity: 1; }
+  50%      { transform: translateY(-18px) scale(1.05); opacity: 0.85; }
+}
+
+/* ====== Loader 3: Equalizer Bars ====== */
+.ldr-bars {
+  display: inline-flex;
+  align-items: flex-end;
+  gap: 6px;
+  height: 48px;
+}
+.ldr-bar {
+  width: 6px;
+  height: 14px;
+  border-radius: 4px;
+  background:
+    linear-gradient(180deg, #fff, var(--bar));
+  animation: ldr-level 900ms ease-in-out infinite;
+  box-shadow: 0 8px 18px rgba(96, 165, 250, 0.35);
+}
+.ldr-bar:nth-child(1) { animation-delay: 0ms; }
+.ldr-bar:nth-child(2) { animation-delay: 120ms; }
+.ldr-bar:nth-child(3) { animation-delay: 240ms; }
+.ldr-bar:nth-child(4) { animation-delay: 360ms; }
+.ldr-bar:nth-child(5) { animation-delay: 480ms; }
+
+@keyframes ldr-level {
+  0%, 100% { height: 14px; transform: translateY(0); }
+  50%      { height: 44px; transform: translateY(-6px); }
+}
+
+
+/* section 2 loader */
+/* ====== Responsive ====== */
+@media (max-width: 900px) {
+  .ldr-wrap { grid-template-columns: 1fr; }
+}
+
