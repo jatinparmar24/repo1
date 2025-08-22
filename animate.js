@@ -30,3 +30,14 @@ setInterval(() => {
 }, 4000);
 
 // section 1
+
+// section 3
+// JS for Dropdown Toggle
+document.querySelectorAll(".dd-dropdown .dd-btn").forEach(btn => {
+  btn.addEventListener("click", function() {
+    const parent = this.parentElement;
+    parent.classList.toggle("open");
+  });
+});
+
+// section 3

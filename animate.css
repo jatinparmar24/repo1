@@ -323,6 +323,140 @@
 
 
 /* section 2 loader */
+
+/* section 3 drop down */
+/* Full Section */
+.dd-section {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(145deg, #1e1e2f, #2a2d3a);
+  font-family: Arial, sans-serif;
+}
+
+.dd-container {
+  display: flex;
+  gap: 3rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.dd-card {
+  background: #fff1;
+  padding: 2rem;
+  border-radius: 1rem;
+  text-align: center;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+  min-width: 220px;
+}
+
+.dd-title {
+  font-size: 1.2rem;
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+/* Shared Dropdown Base */
+.dd-dropdown {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.dd-btn {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.dd-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  width: 100%;
+  display: none;
+  top: 110%;
+  left: 0;
+  z-index: 5;
+}
+
+.dd-menu li {
+  padding: 0.7rem 1rem;
+  cursor: pointer;
+}
+
+.dd-menu li:hover {
+  background: #0001;
+}
+
+/* Dropdown 1: Minimal Underline */
+.dd-underline .dd-btn {
+  background: transparent;
+  border-bottom: 2px solid #fff;
+  color: #fff;
+}
+
+.dd-underline .dd-menu {
+  background: #2a2d3a;
+  border-radius: 0.5rem;
+  color: #fff;
+}
+
+/* Dropdown 2: Modern Glass */
+.dd-glass .dd-btn {
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(6px);
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.3);
+}
+
+.dd-glass .dd-menu {
+  background: rgba(255,255,255,0.2);
+  backdrop-filter: blur(10px);
+  border-radius: 0.5rem;
+  color: #fff;
+}
+
+/* Dropdown 3: Animated Slide */
+.dd-slide .dd-btn {
+  background: #ff6b6b;
+  color: #fff;
+  transition: 0.3s;
+}
+
+.dd-slide .dd-btn:hover {
+  background: #ff4757;
+}
+
+.dd-slide .dd-menu {
+  background: #fff;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  transform: translateY(-10px);
+  opacity: 0;
+  transition: 0.3s ease;
+}
+
+.dd-slide .dd-menu li:hover {
+  background: #f1f1f1;
+}
+
+/* Active State */
+.dd-dropdown.open .dd-menu {
+  display: block;
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* section 3 drop down */
+
+
+
 /* ====== Responsive ====== */
 @media (max-width: 900px) {
   .ldr-wrap { grid-template-columns: 1fr; }
