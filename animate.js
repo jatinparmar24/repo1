@@ -41,3 +41,53 @@ document.querySelectorAll(".dd-dropdown .dd-btn").forEach(btn => {
 });
 
 // section 3
+
+// section 4
+const showOptionsBtn = document.getElementById("showOptionsBtn");
+const navDropdown = document.getElementById("navDropdown");
+const optionsContainer = document.getElementById("optionsContainer");
+const detailsBox = document.getElementById("detailsBox");
+
+const dropdownData = {
+  courses: {
+    "Web Development": "Learn HTML, CSS, JavaScript, and React to build modern websites.",
+    "Data Science": "Master Python, Machine Learning, and Data Analysis.",
+    "UI/UX": "Design engaging and user-friendly interfaces."
+  },
+  services: {
+    "Consulting": "We provide business and tech consulting solutions.",
+    "Design": "Creative design services for brands and startups.",
+    "Marketing": "Digital marketing strategies to grow your business."
+  },
+  products: {
+    "Laptops": "High-performance laptops for work and gaming.",
+    "Mobiles": "Latest smartphones with advanced features.",
+    "Accessories": "Headphones, keyboards, and other gadgets."
+  }
+};
+
+showOptionsBtn.addEventListener("click", () => {
+  const value = navDropdown.value;
+  optionsContainer.innerHTML = "";
+  detailsBox.innerHTML = "";
+  detailsBox.classList.remove("show"); 
+
+  if (dropdownData[value]) {
+    Object.keys(dropdownData[value]).forEach(item => {
+      let btn = document.createElement("button"); 
+      btn.textContent = item;
+
+      btn.addEventListener("click", () => {
+        detailsBox.innerHTML = `<p>${dropdownData[value][item]}</p>`;
+        detailsBox.classList.add("show");
+      });
+
+      optionsContainer.appendChild(btn);
+    });
+  } else {
+    optionsContainer.innerHTML = "<p>Please select a category.</p>";
+  }
+});
+
+
+// section 4

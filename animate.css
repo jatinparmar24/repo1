@@ -455,10 +455,141 @@
 
 /* section 3 drop down */
 
+/* section 4 */
+.nav-section {
+  background: #111;
+  padding: 15px;
+}
+.nav-list {
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  gap: 15px;
+}
+.nav-dropdown, .nav-btn {
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: none;
+  font-size: 1rem;
+}
+.nav-dropdown {
+  background: #fff;
+  color: #333;
+}
+.nav-btn {
+  background: linear-gradient(135deg, #ff7b00, #ff3c00);
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(255, 60, 0, 0.4);
+  transition: all 0.3s ease;
+}
+.nav-btn:hover {
+  transform: scale(1.07);
+  box-shadow: 0 6px 15px rgba(255, 60, 0, 0.6);
+}
+
+.drop-section {
+  min-height: 75vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  padding: 50px 20px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.options-box, .details-box {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  padding: 25px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+  color: #fff;
+  text-align: center;
+  transition: all 0.4s ease;
+  width: 90%;
+  max-width: 400px;
+}
+
+.options-box button {
+  display: block;
+  margin: 12px auto;
+  padding: 14px 18px;
+  width: 80%;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,114,255,0.4);
+  transition: all 0.3s ease;
+}
+.options-box button:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(0,114,255,0.6);
+}
+
+.details-box {
+  opacity: 0;
+  transform: translateY(20px);
+}
+.details-box.show {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.5s ease;
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+/* section 4 */
 
 
 /* ====== Responsive ====== */
+
+@media (max-width: 992px) {
+  .drop-section {
+    padding: 40px 15px;
+    gap: 20px;
+  }
+  .options-box, .details-box {
+    max-width: 90%;
+  }
+  .options-box button {
+    width: 100%;
+  }
+}
+
 @media (max-width: 900px) {
   .ldr-wrap { grid-template-columns: 1fr; }
 }
+
+@media (max-width: 600px) {
+  .nav-list {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+  .nav-dropdown, .nav-btn {
+    width: 90%;
+    font-size: 0.9rem;
+  }
+  .drop-section {
+    padding: 30px 10px;
+  }
+  .options-box, .details-box {
+    padding: 20px;
+    font-size: 0.9rem;
+  }
+  .options-box button {
+    font-size: 0.9rem;
+    padding: 12px;
+  }
+}
+
+
 
