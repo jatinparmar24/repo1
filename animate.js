@@ -91,3 +91,39 @@ showOptionsBtn.addEventListener("click", () => {
 
 
 // section 4
+
+// section 5
+  function showMessage(card, boxNumber) {
+    document.querySelectorAll(".box-card").forEach(box => box.classList.remove("active"));
+    card.classList.add("active");
+    launchConfetti();
+  }
+
+  function closeMessage(event) {
+    event.stopPropagation(); 
+    const card = event.target.closest(".box-card");
+    card.classList.remove("active");
+  }
+
+  function launchConfetti() {
+    const confetti = document.createElement("div");
+    confetti.innerHTML = "🎉";
+    confetti.style.position = "fixed";
+    confetti.style.left = Math.random() * window.innerWidth + "px";
+    confetti.style.top = "-30px";
+    confetti.style.fontSize = "24px";
+    confetti.style.animation = "fall 3s linear forwards";
+    document.body.appendChild(confetti);
+
+    setTimeout(() => confetti.remove(), 3000);
+  }
+
+  const style = document.createElement("style");
+  style.innerHTML = `
+    @keyframes fall {
+      to { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+    }
+  `;
+  document.head.appendChild(style);
+
+// section 5

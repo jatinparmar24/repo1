@@ -162,6 +162,54 @@
 
     <!-- section 4 -->
 
+    <!-- section 5 -->
+  <section class="box-section">
+    <div class="box-container">
+      
+      <div class="side-content">
+        <h1>Discover Your Message ✨</h1>
+        <p>Click on any of the glowing boxes to reveal an inspiring message. 
+        Each box has its own unique vibe – positivity, motivation, and ambition.
+        Watch the magic unfold with animations, confetti, and more!</p>
+        <svg class="side-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+          <circle cx="32" cy="32" r="30" fill="#fff" opacity="0.2"/>
+          <path d="M32 16 L40 32 L24 32 Z" fill="#fff"/>
+          <circle cx="32" cy="44" r="4" fill="#fff"/>
+        </svg>
+      </div>
+
+      <div class="box-table">
+        <div class="box-card" onclick="showMessage(this, 1)">
+          <div class="box-icon">⭐</div>
+          Box 1
+          <div class="box-message">
+            <div class="typing">✨ Stay positive and keep moving forward!</div>
+            <button class="close-btn" onclick="closeMessage(event)">Close</button>
+          </div>
+        </div>
+        <div class="box-card" onclick="showMessage(this, 2)">
+          <div class="box-icon">🌈</div>
+          Box 2
+          <div class="box-message">
+            <div class="typing">🌈 Great things are coming your way!</div>
+            <button class="close-btn" onclick="closeMessage(event)">Close</button>
+          </div>
+        </div>
+        <div class="box-card" onclick="showMessage(this, 3)">
+          <div class="box-icon">🚀</div>
+          Box 3
+          <div class="box-message">
+            <div class="typing">🚀 Dream big, work hard, and shine!</div>
+            <button class="close-btn" onclick="closeMessage(event)">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+    <!-- section 5 -->
+
     <script src="animate.js"></script>
 </body>
 </html>
