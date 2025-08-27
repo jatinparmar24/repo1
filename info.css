@@ -144,6 +144,168 @@
 
 /* section 1 */
 
+/* section 2 */
+.be-scroll-wrapper {
+  width: 100%;
+  overflow-x: hidden;
+  font-family: "Poppins", sans-serif;
+  position: relative;
+}
+
+/* Shared Section Styles */
+.be-scroll-section {
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transform: translateY(50px) scale(0.95);
+  transition: all 1s ease;
+  position: relative;
+  text-align: center;
+  padding: 20px;
+}
+.be-scroll-section.active {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+.be-scroll-title {
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+/* Parallax Background */
+.be-scroll-parallax {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.15), transparent 70%),
+              radial-gradient(circle at 70% 70%, rgba(255,255,255,0.1), transparent 60%);
+  z-index: 0;
+  transform: translateY(0);
+  transition: transform 0.3s ease;
+}
+.be-scroll-section > *:not(.be-scroll-parallax) {
+  position: relative;
+  z-index: 1;
+}
+
+/* Section 1: Intro */
+.be-scroll-intro {
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  color: #fff;
+}
+.be-scroll-heading {
+  font-size: 2.8rem;
+  animation: glow 2s infinite alternate;
+}
+.be-scroll-subtext {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+}
+.be-scroll-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+}
+.be-scroll-list li {
+  margin: 5px 0;
+  font-size: 1rem;
+}
+@keyframes glow {
+  from { text-shadow: 0 0 10px #fff; }
+  to   { text-shadow: 0 0 30px #ff9dff; }
+}
+
+/* Section 2: Timeline */
+.be-scroll-timeline {
+  background: #1c1e26;
+  color: #fff;
+}
+.be-scroll-items {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.be-scroll-item {
+  background: rgba(255,255,255,0.05);
+  padding: 15px;
+  border-left: 3px solid #ff6bcb;
+  font-size: 1.1rem;
+  opacity: 0;
+  transform: translateX(-60px);
+  transition: all 0.8s ease;
+}
+.be-scroll-section.active .be-scroll-item {
+  opacity: 1;
+  transform: translateX(0);
+}
+.be-scroll-item:nth-child(2) { transition-delay: 0.3s; }
+.be-scroll-item:nth-child(3) { transition-delay: 0.6s; }
+
+/* Section 3: Features */
+.be-scroll-features {
+  background: linear-gradient(145deg, #0f2027, #203a43, #2c5364);
+  color: #fff;
+}
+.be-scroll-cards {
+  display: flex;
+  gap: 20px;
+}
+.be-scroll-card {
+  background: rgba(255,255,255,0.08);
+  border-radius: 16px;
+  padding: 20px;
+  flex: 1;
+  text-align: center;
+  transform: translateY(40px) rotate(5deg);
+  transition: all 0.8s ease;
+}
+.be-scroll-section.active .be-scroll-card {
+  transform: translateY(0) rotate(0);
+}
+.be-scroll-card:hover {
+  transform: scale(1.1) rotate(2deg);
+  background: rgba(255,255,255,0.15);
+}
+
+/* Section 4: Stats */
+.be-scroll-stats {
+  background: linear-gradient(120deg, #ff512f, #dd2476);
+  color: #fff;
+}
+.be-scroll-stat {
+  font-size: 1.5rem;
+  margin: 10px 0;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s ease;
+}
+.be-scroll-section.active .be-scroll-stat {
+  opacity: 1;
+  transform: translateY(0);
+}
+.be-scroll-stat:nth-child(2) { transition-delay: 0.3s; }
+.be-scroll-stat:nth-child(3) { transition-delay: 0.6s; }
+.be-scroll-cta {
+  background: #fff;
+  color: #dd2476;
+  border: none;
+  padding: 12px 30px;
+  margin-top: 20px;
+  font-size: 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.be-scroll-cta:hover {
+  background: #ffe5ef;
+  transform: translateY(-5px);
+}
+
+/* section 2 */
+
 /* Responsive */
 @media (max-width: 768px) {
     /* section 1 */

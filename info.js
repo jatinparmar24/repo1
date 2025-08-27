@@ -22,3 +22,28 @@ counters.forEach(counter => {
 });
 
 // section 1
+
+// section 2
+
+document.addEventListener("scroll", () => {
+  const sections = document.querySelectorAll(".be-scroll-section");
+  const triggerBottom = window.innerHeight * 0.8;
+
+  sections.forEach(section => {
+    const boxTop = section.getBoundingClientRect().top;
+
+    if (boxTop < triggerBottom) {
+      section.classList.add("active");
+    } else {
+      section.classList.remove("active");
+    }
+
+    const parallax = section.querySelector(".be-scroll-parallax");
+    if (parallax) {
+      let offset = window.scrollY * 0.2; // move slower than scroll
+      parallax.style.transform = `translateY(${offset}px)`;
+    }
+  });
+});
+
+// section 2
