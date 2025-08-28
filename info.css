@@ -306,6 +306,122 @@
 
 /* section 2 */
 
+/* section 3 */
+    .mix-section {
+      min-height: 100vh;
+      background: linear-gradient(135deg, #6a11cb, #2575fc);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 50px 20px;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      overflow: hidden;
+    }
+
+    .mix-heading {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      opacity: 0;
+      transform: translateY(-30px);
+      transition: all 0.8s ease;
+    }
+    .mix-subheading {
+      font-size: 1.2rem;
+      margin-bottom: 40px;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s ease;
+    }
+
+    /* ===== Card Container ===== */
+    .mix-cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+    .mix-card {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 15px;
+      padding: 20px;
+      width: 280px;
+      height: 220px;
+      text-align: center;
+      backdrop-filter: blur(10px);
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .mix-card:hover {
+      transform: translateY(-10px) scale(1.05);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    }
+
+    /* ===== Popup in Card 1 ===== */
+    .mix-popup {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #fff;
+      color: #333;
+      padding: 10px 15px;
+      border-radius: 10px;
+      font-size: 0.9rem;
+      display: none;
+      animation: mix-pop 0.4s ease forwards;
+    }
+    @keyframes mix-pop {
+      from { opacity: 0; transform: translate(-50%, 20px); }
+      to { opacity: 1; transform: translate(-50%, 0); }
+    }
+
+    /* ===== Loader in Card 2 ===== */
+    .mix-loader {
+      width: 40px;
+      height: 40px;
+      border: 5px solid rgba(255,255,255,0.3);
+      border-top: 5px solid #fff;
+      border-radius: 50%;
+      margin: 30px auto;
+      animation: mix-spin 1s linear infinite;
+    }
+    @keyframes mix-spin {
+      0% { transform: rotate(0); }
+      100% { transform: rotate(360deg); }
+    }
+
+    /* ===== Mini Game in Card 3 ===== */
+    .mix-game {
+      position: relative;
+      width: 100%;
+      height: 120px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .mix-ball {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: #ffeb3b;
+      position: absolute;
+      bottom: 0;
+      left: calc(50% - 15px);
+    }
+
+    /* ===== Scroll animation visible ===== */
+    .mix-visible {
+      opacity: 1 !important;
+      transform: translateY(0) !important;
+    }
+
+
+/* section 3 */
+
 /* Responsive */
 @media (max-width: 768px) {
     /* section 1 */
@@ -316,5 +432,12 @@
     text-align: center;
   }
     /* section 1 */
+
+    /* section 3 */
+       .mix-cards {
+        flex-direction: column;
+        align-items: center;
+      }
+    /* section 3 */
 
 }

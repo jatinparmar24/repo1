@@ -47,3 +47,52 @@ document.addEventListener("scroll", () => {
 });
 
 // section 2
+
+// section 3
+    const heading = document.querySelector('.mix-heading');
+    const subheading = document.querySelector('.mix-subheading');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          heading.classList.add('mix-visible');
+          subheading.classList.add('mix-visible');
+        }
+      });
+    });
+    observer.observe(heading);
+
+    // ===== Card 1 Popup =====
+    const card1 = document.querySelector('.mix-card1');
+    const popup = card1.querySelector('.mix-popup');
+    card1.addEventListener('click', () => {
+      popup.style.display = 'block';
+      setTimeout(() => popup.style.display = 'none', 2000);
+    });
+
+    // ===== Card 3 Ball Jump =====
+    const ball = document.querySelector('.mix-ball');
+    const game = document.querySelector('.mix-game');
+    let jumping = false;
+
+    game.addEventListener('click', () => {
+      if(jumping) return;
+      jumping = true;
+      let pos = 0;
+      let up = setInterval(() => {
+        if(pos >= 70){
+          clearInterval(up);
+          let down = setInterval(() => {
+            if(pos <= 0){
+              clearInterval(down);
+              jumping = false;
+            }
+            pos -= 5;
+            ball.style.bottom = pos + 'px';
+          }, 30);
+        }
+        pos += 5;
+        ball.style.bottom = pos + 'px';
+      }, 30);
+    });
+
+// section 3
