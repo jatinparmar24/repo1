@@ -96,3 +96,37 @@ document.addEventListener("scroll", () => {
     });
 
 // section 3
+
+// section 4
+const pages = document.querySelectorAll(".flip-page");
+const nextBtn = document.getElementById("flip-next");
+const prevBtn = document.getElementById("flip-prev");
+
+let currentPage = 0;
+
+// initialize all pages
+pages.forEach((page, index) => {
+  page.style.zIndex = pages.length - index;
+  page.dataset.flipped = "false";
+});
+
+// Next button
+function showNextPage() {
+  if (currentPage < pages.length) {
+    pages[currentPage].dataset.flipped = "true";
+    currentPage++;
+  }
+}
+
+// Previous button
+function showPrevPage() {
+  if (currentPage > 0) {
+    currentPage--;
+    pages[currentPage].dataset.flipped = "false";
+  }
+}
+
+nextBtn.addEventListener("click", showNextPage);
+prevBtn.addEventListener("click", showPrevPage);
+
+// section 4
