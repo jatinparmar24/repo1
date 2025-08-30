@@ -179,6 +179,59 @@
 
     <!-- section 4 flipbook -->
 
+    
+     <!-- section 5 gooey button -->
+      <section class="gooey-section">
+  <svg style="display: none;">
+    <!-- Gooey filter -->
+    <filter id="gooey-filter">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="8" result="blur" />
+      <feColorMatrix in="blur" mode="matrix" values="
+          1 0 0 0 0  
+          0 1 0 0 0  
+          0 0 1 0 0  
+          0 0 0 20 -10" result="gooey" />
+      <feComposite in="SourceGraphic" in2="gooey" operator="atop"/>
+    </filter>
+  </svg>
+
+  <div class="gooey-wrap">
+    <!-- Button 1 -->
+    <button class="gooey-btn gooey-one">
+      <span>Blob Orbit</span>
+      <div class="gooey-blobs">
+        <span></span><span></span><span></span>
+      </div>
+    </button>
+
+    <!-- Button 2 -->
+    <button class="gooey-btn gooey-two">
+      <span>Jelly Stretch</span>
+      <div class="gooey-blobs">
+        <span></span><span></span>
+      </div>
+    </button>
+
+    <!-- Button 3 -->
+    <button class="gooey-btn gooey-three">
+      <span>Ripple Goo</span>
+      <div class="gooey-blobs">
+        <span></span><span></span><span></span><span></span>
+      </div>
+    </button>
+
+    <!-- Button 4 -->
+    <button class="gooey-btn gooey-four">
+      <span>Liquid Drops</span>
+      <div class="gooey-blobs">
+        <span></span><span></span><span></span>
+      </div>
+    </button>
+  </div>
+</section>
+
+     <!-- section 5 gooey button -->
+
 <script src="info.js"></script>
 </body>
 </html>

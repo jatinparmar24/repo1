@@ -130,3 +130,15 @@ nextBtn.addEventListener("click", showNextPage);
 prevBtn.addEventListener("click", showPrevPage);
 
 // section 4
+
+// section 5
+document.querySelectorAll(".gooey-btn").forEach(btn => {
+  btn.addEventListener("mouseenter", () => {
+    btn.querySelectorAll(".gooey-blobs span").forEach(blob => {
+      blob.style.width = 10 + Math.random() * 20 + "px";
+      blob.style.height = blob.style.width;
+    });
+  });
+});
+
+// section 5

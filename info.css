@@ -494,6 +494,137 @@
 
 /* section 4 */
 
+/* section 5 */
+.gooey-section {
+  background: #0f111a;
+  padding: 80px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.gooey-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  filter: url(#gooey-filter);
+}
+
+/* Common button style */
+.gooey-btn {
+  position: relative;
+  border: none;
+  color: #fff;
+  font-size: 1.2rem;
+  padding: 18px 36px;
+  border-radius: 50px;
+  cursor: pointer;
+  overflow: hidden;
+  font-weight: bold;
+  transition: transform 0.3s ease;
+}
+.gooey-btn:hover {
+  transform: scale(1.05);
+}
+.gooey-btn span {
+  position: relative;
+  z-index: 2;
+}
+.gooey-blobs {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+.gooey-blobs span {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+/* --- Button 1: Blob Orbit --- */
+.gooey-one {
+  background: linear-gradient(145deg, #4ac6ff, #007bff);
+}
+.gooey-one .gooey-blobs span {
+  background: #4ac6ff;
+}
+.gooey-one .gooey-blobs span:nth-child(1) { top: 50%; left: -15px; }
+.gooey-one .gooey-blobs span:nth-child(2) { top: -15px; left: 50%; }
+.gooey-one .gooey-blobs span:nth-child(3) { bottom: -15px; right: 50%; }
+.gooey-one:hover .gooey-blobs span {
+  animation: orbit 2s linear infinite;
+}
+@keyframes orbit {
+  0% { transform: rotate(0deg) translateX(40px); }
+  100% { transform: rotate(360deg) translateX(40px); }
+}
+
+/* --- Button 2: Jelly Stretch --- */
+.gooey-two {
+  background: linear-gradient(145deg, #ff6f61, #ff3c7b);
+}
+.gooey-two .gooey-blobs span {
+  background: #ff6f61;
+}
+.gooey-two .gooey-blobs span:nth-child(1) {
+  top: 0; left: 0; right: 0; bottom: 0;
+  margin: auto; width: 10px; height: 10px;
+}
+.gooey-two .gooey-blobs span:nth-child(2) {
+  bottom: -20px; left: 50%;
+  transform: translateX(-50%);
+}
+.gooey-two:hover {
+  transform: scale(1.2, 0.8);
+}
+.gooey-two:hover .gooey-blobs span:nth-child(2) {
+  bottom: 10px;
+}
+
+/* --- Button 3: Ripple Goo --- */
+.gooey-three {
+  background: linear-gradient(145deg, #42e695, #3bb2b8);
+}
+.gooey-three .gooey-blobs span {
+  background: #42e695;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+}
+.gooey-three:hover .gooey-blobs span {
+  animation: ripple 1.2s ease-out infinite;
+}
+.gooey-three .gooey-blobs span:nth-child(2) { animation-delay: 0.3s; }
+.gooey-three .gooey-blobs span:nth-child(3) { animation-delay: 0.6s; }
+.gooey-three .gooey-blobs span:nth-child(4) { animation-delay: 0.9s; }
+@keyframes ripple {
+  0% { width: 0; height: 0; opacity: 1; }
+  100% { width: 120px; height: 120px; opacity: 0; }
+}
+
+/* --- Button 4: Liquid Drops --- */
+.gooey-four {
+  background: linear-gradient(145deg, #f7971e, #ffd200);
+}
+.gooey-four .gooey-blobs span {
+  background: #ffd200;
+}
+.gooey-four .gooey-blobs span:nth-child(1) { top: -15px; left: 40%; }
+.gooey-four .gooey-blobs span:nth-child(2) { bottom: -15px; left: 60%; }
+.gooey-four .gooey-blobs span:nth-child(3) { right: -15px; top: 50%; }
+.gooey-four:hover .gooey-blobs span {
+  animation: drop 1s ease-in-out infinite;
+}
+.gooey-four .gooey-blobs span:nth-child(2) { animation-delay: 0.2s; }
+.gooey-four .gooey-blobs span:nth-child(3) { animation-delay: 0.4s; }
+@keyframes drop {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(25px); }
+}
+
+/* section 5 */
+
 /* Responsive */
 @media (max-width: 768px) {
     /* section 1 */
