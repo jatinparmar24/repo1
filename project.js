@@ -61,3 +61,75 @@
   }
   animateStars(); 
 // section 2
+
+// section 3
+const buttons = document.querySelectorAll(".controls button");
+const sky = document.querySelector(".sky");
+const ground = document.querySelector(".ground");
+const leaves = document.querySelector(".leaves");
+const fallingContainer = document.querySelector(".falling");
+const blobs = document.querySelectorAll(".blob");
+
+function setSeason(season) {
+  fallingContainer.innerHTML = "";
+
+  switch (season) {
+    case "spring":
+      sky.style.background = "linear-gradient(to top, #a0d8ef, #e6f7ff)";
+      ground.style.background = "#7cfc00";
+      blobs.forEach(b => b.style.background = "pink");
+      createFalling("🌸", 15);
+      break;
+
+    case "summer":
+      sky.style.background = "linear-gradient(to top, #00bfff, #87cefa)";
+      ground.style.background = "#228b22";
+      blobs.forEach(b => b.style.background = "green");
+      break;
+
+    case "autumn":
+      sky.style.background = "linear-gradient(to top, #f4a460, #fddca5)";
+      ground.style.background = "#cd853f";
+      const autumnColors = ["orange", "goldenrod", "brown"];
+      blobs.forEach(b => {
+        b.style.background = autumnColors[Math.floor(Math.random() * autumnColors.length)];
+      });
+      createFalling("🍂", 15);
+      break;
+
+    case "winter":
+      sky.style.background = "linear-gradient(to top, #b0c4de, #f0f8ff)";
+      ground.style.background = "#fff";
+      blobs.forEach(b => b.style.background = "#dcdcdc");
+      createFalling("❄️", 15);
+      break;
+  }
+}
+
+
+// Create falling emojis
+function createFalling(symbol, count) {
+  for (let i = 0; i < count; i++) {
+    let elem = document.createElement("div");
+    elem.textContent = symbol;
+    elem.style.position = "absolute";
+    elem.style.left = Math.random() * 100 + "vw";
+    elem.style.top = "-10vh";
+    elem.style.fontSize = Math.random() * 20 + 20 + "px";
+    elem.style.animation = `fall ${Math.random() * 3 + 3}s linear infinite`;
+    elem.style.animationDelay = Math.random() * 5 + "s";
+    fallingContainer.appendChild(elem);
+  }
+}
+
+// Event listeners
+buttons.forEach(btn => {
+  btn.addEventListener("click", () => {
+    setSeason(btn.dataset.season);
+  });
+});
+
+// Default season
+setSeason("spring");
+
+// section 3
