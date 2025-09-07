@@ -80,6 +80,66 @@
 
     <!-- section 3 season change -->
 
+    <!-- section 4 clock -->
+<section class="clock-wrap" id="clockWrap" data-mode="morning" aria-label="Interactive clock scene">
+  <div class="clock-sky" aria-hidden="true"></div>
+
+  <svg class="clock-sun" viewBox="0 0 100 100" role="img" aria-label="Sun">
+    <defs>
+      <radialGradient id="sunGlow" cx="50%" cy="50%">
+        <stop offset="0%" stop-color="rgba(255, 255, 255, 1)"/>
+        <stop offset="60%" stop-color="rgba(255, 205, 80, 0.9)"/>
+        <stop offset="100%" stop-color="rgba(255, 205, 80, 0.0)"/>
+      </radialGradient>
+    </defs>
+    <circle cx="50" cy="50" r="22" fill="gold"/>
+    <circle cx="50" cy="50" r="40" fill="url(#sunGlow)"/>
+  </svg>
+
+  <svg class="clock-moon" viewBox="0 0 100 100" role="img" aria-label="Moon">
+    <circle cx="60" cy="40" r="22" fill="#f2f2f2"/>
+    <circle cx="70" cy="40" r="22" fill="rgba(0,0,0,0.15)"/>
+  </svg>
+
+  <div class="cloud cloud-1" aria-hidden="true">
+    <span></span><span></span><span></span>
+  </div>
+  <div class="cloud cloud-2" aria-hidden="true">
+    <span></span><span></span><span></span>
+  </div>
+
+  <div class="stars" aria-hidden="true">
+    <!-- 18 stars -->
+    <i></i><i></i><i></i><i></i><i></i><i></i>
+    <i></i><i></i><i></i><i></i><i></i><i></i>
+    <i></i><i></i><i></i><i></i><i></i>
+  </div>
+
+  <svg class="birds" viewBox="0 0 200 80" aria-hidden="true">
+    <path d="M10,40 q10,-10 20,0 M35,40 q10,-10 20,0 M120,30 q12,-10 24,0 M150,30 q12,-10 24,0"
+          fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+  </svg>
+
+  <svg class="clock-ground" viewBox="0 0 100 40" preserveAspectRatio="none" aria-hidden="true">
+    <linearGradient id="hillGrad" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0%" stop-color="var(--hill-top)"/>
+      <stop offset="100%" stop-color="var(--hill-bottom)"/>
+    </linearGradient>
+    <path d="M0,30 C20,10 40,12 50,20 C60,27 80,22 100,10 L100,40 L0,40 Z" fill="url(#hillGrad)"/>
+  </svg>
+
+  <div class="clock-time" aria-live="polite" id="clockTime">07:15 — Morning</div>
+
+  <div class="clock-controls" role="group" aria-label="Time of day controls">
+    <button class="clock-btn" data-set="morning" aria-label="Set to Morning">Morning</button>
+    <button class="clock-btn" data-set="afternoon" aria-label="Set to Afternoon">Afternoon</button>
+    <button class="clock-btn" data-set="evening" aria-label="Set to Evening">Evening</button>
+    <button class="clock-btn" data-set="night" aria-label="Set to Night">Night</button>
+  </div>
+</section>
+
+    <!-- section 4 clock -->
+
 <script src="project.js"></script>
 </body>
 </html>

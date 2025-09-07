@@ -133,3 +133,121 @@ buttons.forEach(btn => {
 setSeason("spring");
 
 // section 3
+
+// section 4
+const clockWrap = document.getElementById("clockWrap");
+const clockTime = document.getElementById("clockTime");
+const button = document.querySelectorAll(".clock-btn");
+
+const modes = {
+  morning: {
+    vars: {
+      "--sky-start": "#9ad0ff",
+      "--sky-end": "#fff6b7",
+      "--sun-left": "20%",
+      "--sun-top": "30%",
+      "--moon-left": "85%",
+      "--moon-top": "20%",
+      "--cloud-opacity": "1",
+      "--stars-opacity": "0",
+      "--birds-opacity": "1",
+      "--hill-top": "#5fb87f",
+      "--hill-bottom": "#2d8b57"
+    },
+    timeRange: [5, 11],
+    label: "Morning"
+  },
+  afternoon: {
+    vars: {
+      "--sky-start": "#87ceeb",
+      "--sky-end": "#fefbd7",
+      "--sun-left": "75%",
+      "--sun-top": "25%",
+      "--moon-left": "85%",
+      "--moon-top": "20%",
+      "--cloud-opacity": "1",
+      "--stars-opacity": "0",
+      "--birds-opacity": "0",
+      "--hill-top": "#4faf7a",
+      "--hill-bottom": "#267a4f"
+    },
+    timeRange: [12, 16],
+    label: "Afternoon"
+  },
+  evening: {
+    vars: {
+      "--sky-start": "#ff9966",
+      "--sky-end": "#ff5e62",
+      "--sun-left": "50%",
+      "--sun-top": "60%",
+      "--moon-left": "70%",
+      "--moon-top": "25%",
+      "--cloud-opacity": "0.6",
+      "--stars-opacity": "0.2",
+      "--birds-opacity": "0",
+      "--hill-top": "#406344",
+      "--hill-bottom": "#1e3924"
+    },
+    timeRange: [17, 19],
+    label: "Evening"
+  },
+  night: {
+    vars: {
+      "--sky-start": "#0f2027",
+      "--sky-end": "#203a43",
+      "--sun-left": "20%",
+      "--sun-top": "80%",
+      "--moon-left": "40%",
+      "--moon-top": "25%",
+      "--cloud-opacity": "0.2",
+      "--stars-opacity": "1",
+      "--birds-opacity": "0",
+      "--hill-top": "#2d2d3a",
+      "--hill-bottom": "#1c1c25"
+    },
+    timeRange: [20, 23], 
+    altRange: [0, 4],
+    label: "Night"
+  }
+};
+
+function randomTime(range, alt = null) {
+  let hour;
+  if (alt && Math.random() < 0.3) {
+    hour = Math.floor(Math.random() * (alt[1] - alt[0] + 1)) + alt[0];
+  } else {
+    hour = Math.floor(Math.random() * (range[1] - range[0] + 1)) + range[0];
+  }
+  const minute = Math.floor(Math.random() * 60);
+  const hh = String(hour).padStart(2, "0");
+  const mm = String(minute).padStart(2, "0");
+  return `${hh}:${mm}`;
+}
+
+function applyMode(modeKey) {
+  const mode = modes[modeKey];
+  if (!mode) return;
+
+  Object.entries(mode.vars).forEach(([key, val]) => {
+    clockWrap.style.setProperty(key, val);
+  });
+
+  const sun = clockWrap.querySelector(".clock-sun");
+  const moon = clockWrap.querySelector(".clock-moon");
+  sun.style.opacity = (modeKey === "night") ? "0" : "1";
+  moon.style.opacity = (modeKey === "night" || modeKey === "evening") ? "1" : "0";
+
+  const time = randomTime(mode.timeRange, mode.altRange);
+  clockTime.textContent = `${time} — ${mode.label}`;
+}
+
+button.forEach(btn => {
+  btn.addEventListener("click", () => {
+    const setMode = btn.getAttribute("data-set");
+    applyMode(setMode);
+  });
+});
+
+applyMode("morning");
+
+// section 4

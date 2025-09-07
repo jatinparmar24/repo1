@@ -272,6 +272,188 @@
 
 /* section 3 */
 
+/* section 4 */
+
+.clock-wrap {
+  --sky-start: #9ad0ff;
+  --sky-end: #fff6b7;
+  --sun-left: 15%;
+  --sun-top: 25%;
+  --moon-left: 85%;
+  --moon-top: 20%;
+  --cloud-opacity: 1;
+  --stars-opacity: 0;
+  --birds-opacity: 1;
+  --hill-top: #5fb87f;
+  --hill-bottom: #2d8b57;
+
+  position: relative;
+  width: min(100%, 1100px);
+  aspect-ratio: 16/9;
+  margin: 24px auto;
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+  background: linear-gradient(180deg, var(--sky-start), var(--sky-end));
+  transition: background 700ms ease;
+}
+
+.clock-sky {
+  position: absolute; inset: 0;
+  background: radial-gradient(120% 80% at 50% 10%, rgba(255,255,255,0.25), transparent 60%);
+  pointer-events: none;
+}
+
+.clock-sun, .clock-moon {
+  position: absolute;
+  width: clamp(60px, 10vw, 120px);
+  height: clamp(60px, 10vw, 120px);
+  transform: translate(-50%, -50%);
+  transition: left 800ms ease, top 800ms ease, opacity 600ms ease, filter 600ms ease;
+  filter: drop-shadow(0 8px 18px rgba(0,0,0,0.15));
+}
+
+.clock-sun {
+  left: var(--sun-left);
+  top: var(--sun-top);
+  opacity: 1;
+}
+
+.clock-moon {
+  left: var(--moon-left);
+  top: var(--moon-top);
+  opacity: 0;
+}
+
+.cloud {
+  position: absolute;
+  top: 16%;
+  left: -20%;
+  width: clamp(120px, 25vw, 380px);
+  height: clamp(40px, 6vw, 100px);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  opacity: var(--cloud-opacity);
+  animation: drift 28s linear infinite;
+  filter: drop-shadow(0 4px 10px rgba(0,0,0,0.1));
+}
+.cloud-2 { top: 28%; animation-duration: 35s; transform: scale(0.9); }
+.cloud span {
+  display: block;
+  background: #fff;
+  border-radius: 999px;
+  height: 100%;
+}
+.cloud span:nth-child(1){ width: 40%; }
+.cloud span:nth-child(2){ width: 30%; height: 85%; margin-top: 10%; }
+.cloud span:nth-child(3){ width: 25%; height: 70%; margin-top: 18%; }
+
+@keyframes drift {
+  0% { left: -30%; }
+  100% { left: 110%; }
+}
+
+.stars {
+  position: absolute;
+  inset: 0;
+  opacity: var(--stars-opacity);
+  pointer-events: none;
+}
+.stars i {
+  position: absolute;
+  width: 3px; height: 3px;
+  border-radius: 50%;
+  background: #fff;
+  opacity: 0.9;
+  animation: twinkle 3s infinite ease-in-out;
+}
+.stars i:nth-child(1){ top: 10%; left: 20%; }
+.stars i:nth-child(2){ top: 15%; left: 70%; }
+.stars i:nth-child(3){ top: 25%; left: 40%; }
+.stars i:nth-child(4){ top: 40%; left: 60%; }
+.stars i:nth-child(5){ top: 12%; left: 85%; }
+.stars i:nth-child(6){ top: 30%; left: 10%; }
+.stars i:nth-child(7){ top: 45%; left: 80%; }
+.stars i:nth-child(8){ top: 55%; left: 50%; }
+.stars i:nth-child(9){ top: 65%; left: 30%; }
+.stars i:nth-child(10){ top: 75%; left: 70%; }
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.2; }
+  50% { opacity: 1; }
+}
+
+.birds {
+  position: absolute;
+  width: 35%;
+  top: 18%;
+  left: 10%;
+  stroke: #222;
+  opacity: var(--birds-opacity);
+  animation: fly 15s linear infinite;
+}
+@keyframes fly {
+  0% { transform: translateX(-30%); }
+  100% { transform: translateX(130%); }
+}
+
+.clock-ground {
+  position: absolute;
+  bottom: 0;
+  left: 0; right: 0;
+  height: 35%;
+}
+
+.clock-time {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0,0,0,0.35);
+  color: #fff;
+  padding: 8px 20px;
+  border-radius: 12px;
+  font-size: clamp(14px, 2vw, 20px);
+  letter-spacing: 1px;
+  font-weight: 500;
+  text-align: center;
+  backdrop-filter: blur(4px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.25);
+}
+
+.clock-controls {
+  position: absolute;
+  bottom: 3%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.clock-btn {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 6px 14px;
+  border-radius: 10px;
+  font-size: clamp(12px, 1.5vw, 16px);
+  background: rgba(255,255,255,0.8);
+  color: #333;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+.clock-btn:hover {
+  background: #333;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+
+
+/* section 4 */
+
 /* responsive */
 @media (max-width: 768px) {
 
@@ -349,4 +531,11 @@
     height: 70px;
   }
   /* section 3 */
+
+  /* section 4 */
+  .cloud { display: none; } /* hide clouds on very small screens */
+  .birds { width: 50%; }
+  .clock-time { font-size: 12px; padding: 6px 14px; }
+  .clock-btn { padding: 5px 10px; font-size: 12px; }
+  /* section 4 */
 }
