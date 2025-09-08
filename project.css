@@ -454,6 +454,106 @@
 
 /* section 4 */
 
+/* section 5 */
+.storm-section {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  background: linear-gradient(to bottom, #0a0a12, #1a1a28 80%, #0a0a0f);
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+/* Cloud layers */
+.storm-cloud {
+  position: absolute;
+  width: 120%;
+  left: -10%;
+  fill: #2a2a3a;
+  opacity: 0.7;
+}
+
+.storm-cloud-back {
+  top: 10%;
+  animation: storm-cloudMoveBack 60s linear infinite;
+  fill: #333344;
+}
+
+.storm-cloud-front {
+  top: 5%;
+  animation: storm-cloudMoveFront 40s linear infinite;
+  fill: #44445a;
+}
+
+@keyframes storm-cloudMoveBack {
+  from { transform: translateX(0); }
+  to { transform: translateX(-10%); }
+}
+@keyframes storm-cloudMoveFront {
+  from { transform: translateX(0); }
+  to { transform: translateX(-20%); }
+}
+
+/* Rain */
+.storm-rain {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(
+    to bottom right,
+    rgba(255, 255, 255, 0.25) 1px,
+    transparent 1px
+  );
+  background-size: 2px 20px;
+  animation: storm-rainFall 0.4s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes storm-rainFall {
+  from { background-position: 0 0; }
+  to { background-position: -10px 20px; }
+}
+
+/* Lightning bolt */
+.storm-bolt {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  width: 60px;
+  height: 200px;
+  transform: translateX(-50%);
+  stroke: yellow;
+  stroke-width: 6;
+  fill: none;
+  stroke-dasharray: 400;
+  stroke-dashoffset: 400;
+  opacity: 0;
+}
+
+.storm-bolt.active {
+  opacity: 1;
+  animation: storm-boltFlash 0.3s ease, storm-boltDraw 0.3s linear;
+}
+
+@keyframes storm-boltFlash {
+  0% { filter: brightness(1); }
+  50% { filter: brightness(3); }
+  100% { filter: brightness(1); }
+}
+
+@keyframes storm-boltDraw {
+  from { stroke-dashoffset: 400; }
+  to { stroke-dashoffset: 0; }
+}
+
+
+
+/* section 5 */
+
 /* responsive */
 @media (max-width: 768px) {
 
@@ -483,6 +583,12 @@
     .solar-system .planet { transform: translate(-50%, -50%) scale(0.8); }
   /* section 2 */
 
+  /* section 5 */
+    .storm-bolt {
+    width: 40px;
+    height: 150px;
+  }
+  /* section 5 */
 }
 
 @media (max-width: 600px) {
@@ -533,9 +639,19 @@
   /* section 3 */
 
   /* section 4 */
-  .cloud { display: none; } /* hide clouds on very small screens */
+  .cloud { display: none; } 
   .birds { width: 50%; }
   .clock-time { font-size: 12px; padding: 6px 14px; }
   .clock-btn { padding: 5px 10px; font-size: 12px; }
   /* section 4 */
+
+  /* section 5 */
+    .storm-bolt {
+    width: 30px;
+    height: 120px;
+  }
+  .storm-cloud {
+    opacity: 0.8;
+  }
+  /* section 5 */
 }

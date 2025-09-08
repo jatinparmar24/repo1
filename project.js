@@ -251,3 +251,17 @@ button.forEach(btn => {
 applyMode("morning");
 
 // section 4
+
+// section 5
+  function strike() {
+    const bolt = document.querySelector(".storm-bolt");
+    bolt.classList.add("active");
+
+    setTimeout(() => bolt.classList.remove("active"), 300);
+
+    setTimeout(strike, Math.random() * 5000 + 2000); 
+  }
+
+  strike();
+
+// section 5
