@@ -170,3 +170,145 @@
   border-radius: 10px;
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
 }
+
+
+/* Scoped to tbl- prefix */
+.tbl-body {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #1d2b64, #f8cdda);
+  margin: 0;
+  padding: 0;
+  color: #fff;
+}
+
+/* Top Navigation */
+.tbl-topnav {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 1rem;
+  backdrop-filter: blur(6px);
+  position: sticky;
+  top: 0;
+}
+.tbl-topnav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s, transform 0.3s;
+}
+.tbl-topnav a:hover {
+  color: #f8cdda;
+  transform: scale(1.1);
+}
+
+/* Header */
+.tbl-header {
+  text-align: center;
+  padding: 3rem 1rem;
+}
+.tbl-header h1 {
+  font-size: 3rem;
+  color: #ffd369;
+}
+.tbl-header h3 {
+  font-weight: 400;
+  color: #f3f3f3;
+}
+
+/* Info Section */
+.tbl-info {
+  text-align: center;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  margin: 2rem auto;
+  width: 80%;
+}
+
+/* Marquee replacement */
+.tbl-marquee {
+  overflow: hidden;
+  white-space: nowrap;
+  box-sizing: border-box;
+  animation: scroll 10s linear infinite;
+  padding: 1rem;
+  font-size: 1.2rem;
+  text-align: center;
+  background: rgba(0,0,0,0.3);
+  margin: 1rem auto;
+  width: 80%;
+  border-radius: 10px;
+}
+@keyframes scroll {
+  0% { transform: translateX(100%);}
+  100% { transform: translateX(-100%);}
+}
+
+/* Navbar List */
+.tbl-navbar {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 1rem;
+  margin: 0;
+}
+.tbl-navbar li a {
+  color: #fff;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+.tbl-navbar li a:hover {
+  color: #ffd369;
+  border-bottom: 2px solid #ffd369;
+}
+
+/* Car Section */
+.tbl-car {
+  text-align: center;
+  margin: 3rem auto;
+  width: 85%;
+  background: rgba(255,255,255,0.1);
+  padding: 2rem;
+  border-radius: 20px;
+}
+
+/* Inputs */
+.tbl-inputs {
+  padding: 2rem;
+  text-align: center;
+}
+.tbl-inputs input {
+  margin: 0.5rem;
+  padding: 0.7rem;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  transition: 0.3s;
+}
+.tbl-inputs input:focus {
+  box-shadow: 0 0 10px #ffd369;
+}
+
+/* Hover Boxes */
+.tbl-hover {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin: 3rem 0;
+}
+.tbl-hover1,
+.tbl-hover2 {
+  width: 150px;
+  height: 150px;
+  background: linear-gradient(135deg, #ff6a00, #ee0979);
+  border-radius: 20px;
+  transition: transform 0.4s, box-shadow 0.4s;
+}
+.tbl-hover1:hover,
+.tbl-hover2:hover {
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
