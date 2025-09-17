@@ -5,6 +5,14 @@ const links = document.querySelector(".daily-links");
 hamburger.addEventListener("click", () => {
   links.classList.toggle("show");
 });
-
-
 // section 1
+
+// section 2
+const toggle = document.querySelector(".dm-toggle");
+const navLinks = document.querySelector(".dm-nav-links");
+
+toggle.addEventListener("click", () => {
+  navLinks.classList.toggle("show");
+});
+
+// section 2

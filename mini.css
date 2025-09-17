@@ -9,9 +9,6 @@
     width: 100%;
     padding: 15px 40px;
     background: rgba(0, 0, 0, 0.6);
-    position: fixed;
-    top: 0;
-    left: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -164,6 +161,180 @@
   
 /* section 1 */
 
+/* section 2 */
+.dm-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 10%;
+  background: rgba(28, 30, 38, 0.9);
+  backdrop-filter: blur(10px);
+  color: #fff;
+  width: 100%;
+  z-index: 100;
+}
+.dm-logo {
+  font-size: 26px;
+  font-weight: 700;
+}
+.dm-logo span {
+  background: linear-gradient(45deg, #ff6b6b, #feca57);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.dm-nav-links {
+  display: flex;
+  list-style: none;
+}
+.dm-nav-links li {
+  margin-left: 28px;
+  position: relative;
+}
+.dm-nav-links a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 16px;
+  transition: 0.3s;
+}
+.dm-nav-links a:hover {
+  color: #ff6b6b;
+}
+.dm-toggle {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+/* Hero */
+.dm-hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 10%;
+  background: linear-gradient(135deg, #1c1e26, #2a2d3a);
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+.dm-hero-inner {
+  max-width: 650px;
+  text-align: center;
+  z-index: 2;
+  animation: fadeIn 1.5s ease-in-out forwards;
+}
+.dm-title {
+  font-size: 52px;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  background: linear-gradient(90deg, #ff6b6b, #feca57);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: slideDown 1s ease forwards;
+}
+.dm-title span {
+  color: #ff6b6b;
+}
+.dm-subtext {
+  margin-bottom: 18px;
+  font-size: 18px;
+  line-height: 1.6;
+  opacity: 0;
+  animation: fadeInUp 1.2s ease forwards;
+}
+.dm-buttons {
+  margin-top: 25px;
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+.dm-btn {
+  padding: 12px 28px;
+  border: none;
+  border-radius: 25px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.dm-primary {
+  background: #ff6b6b;
+  color: #fff;
+}
+.dm-primary:hover {
+  background: #ff4040;
+}
+.dm-secondary {
+  background: transparent;
+  border: 2px solid #ff6b6b;
+  color: #ff6b6b;
+}
+.dm-secondary:hover {
+  background: #ff6b6b;
+  color: #fff;
+}
+
+/* Shapes */
+.dm-hero-shapes .dm-shape {
+  position: absolute;
+  opacity: 0.2;
+  animation: float 6s ease-in-out infinite;
+}
+.dm-circle {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: #ff6b6b;
+  top: 15%;
+  left: 10%;
+}
+.dm-triangle {
+  width: 0;
+  height: 0;
+  border-left: 70px solid transparent;
+  border-right: 70px solid transparent;
+  border-bottom: 120px solid #feca57;
+  right: 12%;
+  top: 25%;
+}
+.dm-square {
+  width: 100px;
+  height: 100px;
+  background: #48dbfb;
+  bottom: 15%;
+  left: 20%;
+}
+
+/* Footer */
+.dm-footer {
+  background: #111319;
+  padding: 18px;
+  text-align: center;
+  color: #bbb;
+  font-size: 14px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+@keyframes slideDown {
+  from {transform: translateY(-40px); opacity: 0;}
+  to {transform: translateY(0); opacity: 1;}
+}
+@keyframes fadeInUp {
+  from {transform: translateY(40px); opacity: 0;}
+  to {transform: translateY(0); opacity: 1;}
+}
+@keyframes float {
+  0% { transform: translateY(0);}
+  50% { transform: translateY(-20px);}
+  100% { transform: translateY(0);}
+}
+
+
+/* section 2 */
+
   /* Responsive */
   @media (max-width: 768px) {
     .daily-links {
@@ -199,6 +370,34 @@
     }
   }
     /* section 1 */
+
+    @media (max-width: 900px) {
+      /* section 2 */
+      .dm-nav-links {
+        display: none;
+        flex-direction: column;
+        background: #1c1e26;
+        position: absolute;
+        top: 70px;
+        right: 10%;
+        padding: 20px;
+        border-radius: 8px;
+      }
+      .dm-nav-links.show {
+        display: flex;
+      }
+      .dm-toggle {
+        display: block;
+      }
+      .dm-title {
+        font-size: 38px;
+      }
+      .dm-subtext {
+        font-size: 16px;
+      }
+         /* section 2 */
+    }
+    
 
   
   
