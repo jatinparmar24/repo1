@@ -16,3 +16,13 @@ toggle.addEventListener("click", () => {
 });
 
 // section 2
+
+// section 3
+const nav = document.querySelector('.fert-nav');
+const hamburgers = document.querySelector('.fert-hamburger');
+
+hamburgers.addEventListener('click', () => {
+  nav.classList.toggle('active');
+});
+
+// section 3
