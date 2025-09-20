@@ -633,6 +633,170 @@
 
 /* section 4 */
 
+/* section 5 */
+.ice-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 50px;
+  background: linear-gradient(90deg, #ec4899, #f97316, #facc15);
+  color: #fff;
+}
+
+.ice-logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.ice-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.ice-links a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  position: relative;
+}
+
+.ice-links a::after {
+  content: "";
+  position: absolute;
+  left: 0; bottom: -4px;
+  width: 0%; height: 2px;
+  background: #fff;
+  transition: width 0.3s ease;
+}
+
+.ice-links a:hover::after {
+  width: 100%;
+}
+
+.ice-btn {
+  padding: 8px 16px;
+  background: #f43f5e;
+  border: none;
+  border-radius: 6px;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.ice-btn:hover {
+  background: #e11d48;
+}
+
+.ice-btn.secondary {
+  background: #2563eb;
+}
+
+.ice-btn.secondary:hover {
+  background: #1d4ed8;
+}
+
+/* Hero Section */
+.ice-hero {
+  height: 100vh;
+  background: linear-gradient(145deg, #fff7ed, #fef3c7);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  padding: 20px;
+}
+
+.ice-hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 15px;
+  color: #be123c;
+}
+
+.ice-hero-content h1 span {
+  color: #f97316;
+}
+
+.ice-hero-content p {
+  max-width: 600px;
+  margin: auto;
+  font-size: 1.1rem;
+  color: #7c2d12;
+}
+
+.ice-hero-buttons {
+  margin-top: 20px;
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+/* Floating Ice Creams Animation */
+.ice-animations {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  pointer-events: none;
+}
+
+.ice-animations span {
+  position: absolute;
+  font-size: 2.5rem;
+  animation: float 6s ease-in-out infinite;
+}
+
+.ice-animations span:nth-child(1) { left: 15%; animation-duration: 5s; }
+.ice-animations span:nth-child(2) { left: 40%; animation-duration: 7s; }
+.ice-animations span:nth-child(3) { left: 65%; animation-duration: 6s; }
+.ice-animations span:nth-child(4) { left: 80%; animation-duration: 8s; }
+
+@keyframes float {
+  0% { bottom: -10%; transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-50px) rotate(15deg); }
+  100% { bottom: 110%; transform: translateY(0) rotate(-15deg); }
+}
+
+/* Footer */
+.ice-footer {
+  background: #be123c;
+  color: #fff;
+  padding: 40px 20px 20px;
+}
+
+.ice-footer-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.ice-footer-section h3 {
+  margin-bottom: 10px;
+  color: #facc15;
+}
+
+.ice-footer-section p, 
+.ice-footer-section a {
+  color: #ffe4e6;
+  font-size: 0.95rem;
+}
+
+.ice-footer-section a:hover {
+  text-decoration: underline;
+}
+
+.ice-footer-copy {
+  text-align: center;
+  font-size: 0.85rem;
+  border-top: 1px solid #facc15;
+  padding-top: 10px;
+}
+
+/* section 5 */
+
   /* Responsive */
   @media (max-width: 768px) {
     /* section 1 */
@@ -711,6 +875,23 @@
   }
 
     /* section 4 */
+
+    /* section 5 */
+      .ice-links {
+    display: none;
+  }
+  .ice-hero-content h1 {
+    font-size: 2.2rem;
+  }
+  .ice-hero-content p {
+    font-size: 1rem;
+  }
+  .ice-hero-buttons {
+    flex-direction: column;
+  }
+
+    /* section 5 */
+
   }
 
     @media (max-width: 900px) {
